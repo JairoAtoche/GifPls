@@ -13,6 +13,9 @@ export default defineConfig({
 			),
 			'@/pages': fileURLToPath(new URL('./src/pages/', import.meta.url)),
 			'@/styles': fileURLToPath(new URL('./src/styles/', import.meta.url)),
+			'@/router': fileURLToPath(
+				new URL('./src/config/router/', import.meta.url)
+			),
 		},
 	},
 	plugins: [react()],

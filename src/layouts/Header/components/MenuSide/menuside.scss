@@ -1,0 +1,15 @@
+.nav__ul {  
+  width: 100%;
+  min-height: calc(100vh - 45px);
+  margin-top: 45px;
+  position: absolute;
+  top: 0;
+  right: 0;//right: -100%;
+  z-index: 100;
+  background-color: purple;
+  transition: all .5s ease;
+}
+
+.cerrar {
+  right: -100%;
+}

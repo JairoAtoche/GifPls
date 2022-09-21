@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './menuicon.scss';
+import PropTypes from 'prop-types';
 
-const MenuIcon = () => {
-	const [close, setClose] = useState(false);
-
-	const handleState = () => {
-		close ? setClose(false) : setClose(true);
-	};
-
+const MenuIcon = ({ handleVisible, visible }) => {
 	return (
 		<div
-			className={`menu__icon icon ${close ? 'icon-close' : ''}`}
-			onClick={handleState}>
+			className={`menu__icon icon ${visible ? 'icon-close' : ''}`}
+			onClick={handleVisible}>
 			<div className='icon__line'></div>
 			<div className='icon__line'></div>
 			<div className='icon__line'></div>
 		</div>
 	);
+};
+
+MenuIcon.propTypes = {
+	handleVisible: PropTypes.func,
+	visible: PropTypes.string,
 };
 
 export default MenuIcon;

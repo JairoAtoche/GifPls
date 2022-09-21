@@ -1,0 +1,22 @@
+@import '@/styles/mixins';
+
+.menu-item {
+  background-color: yellow;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  @include caja-flex(column,center,center);
+  
+
+  &__link {
+    text-decoration: none;
+    color: var(--black-light);
+    margin: 30px 0;
+    @include caja-flex(row,center,center,10px);
+  }
+}
+
+.hr {
+  width: 80%;
+  border: 1px solid var(--black-light);
+}
