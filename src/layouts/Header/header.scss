@@ -1,34 +1,29 @@
 .header {
-  background-color: var(--white-dark); // theme
-  box-shadow: 0 4px 4px -4px var(--black-light); //theme
-  color: var(--purple);
-	width: 100vw;
-	padding: 0 30px;
-  height: 45px; //res
-
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-  
   position: relative;
 }
-
 .nav {
+  background-color: var(--white-dark);
+  box-shadow: 0 4px 4px -4px var(--black-light);
+  position: fixed;
+  height: 45px;
+  padding: 0 30px;
+  width: 100%;
+
   display: flex;
-  justify-content: space-between;
   align-items: center;
-	width: 100%;
-  &__ul {
-    list-style: none;
-  }
-  &__link {
-    text-decoration: none;
-  }
+  justify-content: space-between;
+  
+}
+.header__content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .container-logo {
   width: 35px; // res
   &__img {
+    width: 35px;
     max-width: 100%;
     object-fit: cover;
   }

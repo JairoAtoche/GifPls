@@ -1,15 +1,16 @@
-.nav__ul {  
+.nav__ul {
+  border-top: 1px solid var(--black-light);
   width: 100%;
   min-height: calc(100vh - 45px);
   margin-top: 45px;
   position: absolute;
   top: 0;
-  right: 0;//right: -100%;
-  z-index: 100;
-  background-color: purple;
+  right: 0;
   transition: all .5s ease;
+  background-color: var(--white-dark);
 }
 
 .cerrar {
   right: -100%;
+  opacity: 0;
 }

@@ -1,7 +1,11 @@
 import React from 'react';
 
 const Gifs = () => {
-	return <h1>GIFS</h1>;
+	return (
+		<main>
+			<h1>Página GIFS</h1>
+		</main>
+	);
 };
 
 export default Gifs;

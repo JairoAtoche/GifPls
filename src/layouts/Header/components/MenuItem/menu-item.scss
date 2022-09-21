@@ -1,7 +1,6 @@
 @import '@/styles/mixins';
 
 .menu-item {
-  background-color: yellow;
   font-size: 18px;
   font-weight: bold;
   text-align: center;
@@ -17,6 +16,6 @@
 }
 
 .hr {
-  width: 80%;
+  width: 90%;
   border: 1px solid var(--black-light);
 }
