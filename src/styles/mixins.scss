@@ -1,0 +1,17 @@
+@import './variables';
+
+// Permite crear un flex con valores variables
+@mixin caja-flex($direction, $justify, $align, $gap: initial) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+	gap: $gap;
+}
+
+// Permite realizar el responsive
+@mixin desktop {
+	@media screen and (min-width: variables.$medium) {
+			@content
+	}
+}

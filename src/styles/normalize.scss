@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import './variables';
+@import './mixins';
+
+:root {
+  /* Primary colors */
+  --purple: #{map-get($map: $colors, $key: 'purple')};
+  --red: #{map-get($map: $colors, $key: 'red')};
+  --yellow: #{map-get($map: $colors, $key: 'yellow')};
+  --sky-blue: #{map-get($map: $colors, $key: 'sky-blue')};
+  /* Secondary colors */
+  --black: #{map-get($map: $colors, $key: 'black')};
+  --black-light: #{map-get($map: $colors, $key: 'black-light')};
+  --gray: #{map-get($map: $colors, $key: 'gray')};
+  --white-dark: #{map-get($map: $colors, $key: 'white-dark')};
+  --white: #{map-get($map: $colors, $key: 'white')};
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  @include caja-flex(column,start,center);
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  @include caja-flex(column,start,center);
+  background-color: var(--white-dark);
+  font-family: 'Lato', sans-serif;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  background-color: red;
+}
