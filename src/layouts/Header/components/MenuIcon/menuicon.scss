@@ -1,0 +1,27 @@
+.icon {
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  &__line {
+    height: 5px;
+    border-radius: 10px;
+    background-color: var(--black-light);
+    transition-duration: .5s;
+    &:nth-child(2) {
+      margin: 5px auto;
+    }
+  }
+}
+
+.icon-close > .icon__line {
+  transition-duration: .5s;
+    &:first-child {
+      transform: translateY(10px) rotate(225deg);
+    }
+    &:nth-child(2) {
+      opacity: 0;
+    }
+    &:last-child {
+      transform: translateY(-10px) rotate(-225deg);
+    }
+}
