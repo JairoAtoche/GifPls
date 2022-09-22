@@ -1,0 +1,17 @@
+.gif {
+
+}
+.section-intro {
+  width: 100%;
+  padding: 0 30px;
+  text-align: center;
+  &__h1 {
+    font-size: 41px;
+    font-weight: bold;
+    padding-top: 10px;
+  }
+  &__p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+}

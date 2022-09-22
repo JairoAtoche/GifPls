@@ -46,13 +46,12 @@
 .text {
   width: 100%;
   font-size: 18px;
-}
-.text-light {
-  text-align: end; 
-  padding-right: 15px;
-}
-.text-dark {
-  text-align: start;
-  width: 100%;
-  padding-left: 15px;
+  &-light {
+    text-align: end; 
+    padding-right: 15px;
+  }
+  &-dark {
+    text-align: start;
+    padding-left: 15px;
+  }
 }

@@ -1,0 +1,42 @@
+.diva {
+  background: linear-gradient(21deg, red,orange,yellow,green,blue,purple);
+  width: 303px;
+  border-radius: 10px;
+  height: 33px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.searcher {
+  &-input {
+    width: 210px;
+    height: 30px;
+    border-radius: 10px 0 0 10px;
+    border: 1px solid var(--gray);
+    padding-left: 10px;
+    border: none;
+    transition: all .5s ease;
+    
+    &:focus ~ .searcher-btn, &:focus{
+      outline: 0;
+      box-shadow: 0px 0px 3px 3px var(--purple);
+    }
+  
+  }
+  &-btn {
+    width: 90px;
+    height: 30px;
+    border-radius: 0 10px 10px 0;
+    background-color: var(--purple);
+    border: none;
+    font-weight: bold;
+    font-size: 14px;
+    color: var(--white);
+    cursor: pointer;
+    transition: all .5s ease;
+    &:hover {
+      opacity: .8;
+    }
+  }
+
+}

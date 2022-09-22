@@ -44,4 +44,26 @@
   &-color--dark {
     color: var(--white-dark);
   }
+  &-page--light {    
+    background-color: var(--white-dark);
+    color: var(--black-light);
+  }
+  &-page--dark {    
+    background-color: var(--black-light);
+    color: var(--white-dark);
+  }
+  
+  &-input {
+    &--light {   
+      background-color: var(--white-dark);
+    }
+    &--dark {
+      background-color: var(--black-light);
+      caret-color: var(--white-dark);
+      color: var(--white);
+      &::placeholder {
+        color: var(--white-dark);
+      }
+    }
+  }
 }
