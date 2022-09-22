@@ -8,6 +8,7 @@
   --red: #{map-get($map: $colors, $key: 'red')};
   --yellow: #{map-get($map: $colors, $key: 'yellow')};
   --sky-blue: #{map-get($map: $colors, $key: 'sky-blue')};
+  --dark-blue: #{map-get($map: $colors, $key: 'dark-blue')};
   /* Secondary colors */
   --black: #{map-get($map: $colors, $key: 'black')};
   --black-light: #{map-get($map: $colors, $key: 'black-light')};

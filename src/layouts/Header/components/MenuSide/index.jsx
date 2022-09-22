@@ -9,7 +9,7 @@ import { ThemeContext } from '@/context/ThemeContext';
 import ThemeButton from '../ThemeButton';
 
 const MenuSide = ({ visible }) => {
-	const { theme, handleTheme } = useContext(ThemeContext);
+	const { theme } = useContext(ThemeContext);
 
 	return (
 		<ul className={`nav__ul ${visible} theme--bg-${theme}`}>
@@ -22,7 +22,6 @@ const MenuSide = ({ visible }) => {
 			<MenuItem to={FAVORITOS} name='MIS FAVORITOS'>
 				<AiFillHeart />
 			</MenuItem>
-			<button onClick={handleTheme}>CAMBIAR TEMAS</button>
 			<ThemeButton />
 		</ul>
 	);
