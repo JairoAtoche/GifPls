@@ -65,5 +65,24 @@
         color: var(--white-dark);
       }
     }
+  }  
+  &-skeleton-default {
+    &--light {
+      color: #00000090;
+    }
+    &--dark {
+      color: var(--gray);
+    }
+  }
+
+  
+  &-subtitle {
+    &--light {
+      border-bottom: 1px solid var(--black-light);
+    }
+  
+    &--dark {
+      border-bottom: 1px solid var(--white-dark);
+    }
   }
 }

@@ -3,6 +3,9 @@ import './gifs.scss';
 import '@/styles/theme.scss';
 import { ThemeContext } from '@/context/ThemeContext';
 import Searcher from '@/components/Searcher/Searcher';
+import Section from '@/components/Section/Section';
+import SkeletonDefault from '@/components/SkeletonDefault/SkeletonDefault';
+
 const Gifs = () => {
 	const { theme } = useContext(ThemeContext);
 	return (
@@ -15,12 +18,15 @@ const Gifs = () => {
 				</p>
 				<Searcher />
 			</section>
-			<section className='section-gif'>
-				<h2>Gif</h2>
-			</section>
-			<section className='section-trend'>
-				<h2>Últimas tendencias</h2>
-			</section>
+			<Section subtitle='Gif'>
+				<SkeletonDefault
+					subtitle='Aún no tenemos ninguna búsqueda tuya ¿Qué esperas para empezar a buscar?'
+					paragraph='Explora y descubre divertidos gif y clips con sonido para animar tus conversaciones'
+					source='https://i.pinimg.com/originals/a1/77/df/a177dfc84703c31afa0d501ccf43fe4f.gif'
+					alternative='gif'
+				/>
+			</Section>
+			<Section subtitle='Últimas tendencias'></Section>
 		</main>
 	);
 };
