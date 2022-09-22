@@ -1,5 +1,4 @@
 .nav__ul {
-  border-top: 1px solid var(--black-light);
   width: 100%;
   min-height: calc(100vh - 45px);
   margin-top: 45px;
@@ -7,7 +6,6 @@
   top: 0;
   right: 0;
   transition: all .5s ease;
-  background-color: var(--white-dark);
 }
 
 .cerrar {

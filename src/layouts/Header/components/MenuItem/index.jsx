@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './menu-item.scss';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
-
+import { ThemeContext } from '@/context/ThemeContext';
+import '@/styles/theme.scss';
 const MenuItem = ({ children, to, name }) => {
+	const { theme } = useContext(ThemeContext);
 	return (
 		<li className='menu-item'>
-			<NavLink to={to} className='menu-item__link'>
+			<NavLink to={to} className={`menu-item__link theme-color--${theme}`}>
 				{children}
 				{name}
 			</NavLink>
-			<hr className='hr' />
+			<hr className={`hr theme-border--${theme}`} />
 		</li>
 	);
 };

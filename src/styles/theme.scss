@@ -1,0 +1,47 @@
+.theme {
+  // background nav
+  &--nav-light {
+    background-color: var(--white-dark);
+    border-bottom: 1px solid var(--black-light);
+    transition-duration: .5s;
+  }
+  &--nav-dark {
+    background-color: var(--black-light);
+    border-bottom: 1px solid var(--white-dark);
+    transition-duration: .5s;
+  }
+  &--bg-light {
+    background-color: var(--white-dark);
+    transition-duration: .5s;
+  }
+  &--bg-dark {
+    background-color: var(--black-light);
+    transition-duration: .5s;
+  }
+  // svg
+  &-svg--light {
+    filter: invert(0);
+  }
+  &-svg--dark {
+    filter: invert(1);
+  }
+  // btn
+  &-btn--light {
+    background-color: var(--black-light);
+  }
+  &-btn--dark {
+    background-color: var(--white-dark);
+  }
+  &-border--light {
+    border: 1px solid var(--black-light);
+  }
+  &-border--dark {
+    border: 1px solid var(--white-dark);
+  }
+  &-color--light {
+    color: var(--black-light);
+  }
+  &-color--dark {
+    color: var(--white-dark);
+  }
+}

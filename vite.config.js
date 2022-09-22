@@ -16,6 +16,7 @@ export default defineConfig({
 			'@/router': fileURLToPath(
 				new URL('./src/config/router/', import.meta.url)
 			),
+			'@/context': fileURLToPath(new URL('./src/context/', import.meta.url)),
 		},
 	},
 	plugins: [react()],
