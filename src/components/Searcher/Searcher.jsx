@@ -9,7 +9,7 @@ const Searcher = () => {
 		<div className='diva'>
 			<input
 				className={`searcher-input theme-input--${theme}`}
-				placeholder='Escribe una palabra'
+				placeholder='Escribe una palabra o frase'
 			/>
 			<button className='searcher-btn'>BUSCAR</button>
 		</div>

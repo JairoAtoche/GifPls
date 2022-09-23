@@ -11,7 +11,12 @@ const SkeletonDefault = ({ subtitle, paragraph, source, alternative }) => {
 			<h4 className='skeleton-default__h4'>{subtitle}</h4>
 			<p className='skeleton-default__p'>{paragraph}</p>
 			<div className='skeleton-default__gif-container'>
-				<img src={source} alt={alternative} className='skeleton-default__gif' />
+				<img
+					src={source}
+					alt={alternative}
+					title={alternative}
+					className='skeleton-default__gif'
+				/>
 			</div>
 		</div>
 	);
