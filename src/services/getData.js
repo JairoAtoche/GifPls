@@ -6,9 +6,9 @@ export const getData = async word => {
 	);
 	const res = await response.json();
 	const { id, title, images } = await res.data;
-	const data = await images.downsized_large.url;
+	const img = await images.downsized_large.url;
 	console.log(`${URL}/gifs/random?api_key=${API_KEY}&tag=${word}`);
-	console.log(id, title, data);
-	const resp = { id, title, data };
+	console.log(id, title, img);
+	const resp = { id, title, img };
 	return resp;
 };

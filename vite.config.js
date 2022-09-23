@@ -18,6 +18,7 @@ export default defineConfig({
 			),
 			'@/context': fileURLToPath(new URL('./src/context/', import.meta.url)),
 			'@/services': fileURLToPath(new URL('./src/services/', import.meta.url)),
+			'@/hooks': fileURLToPath(new URL('./src/hooks/', import.meta.url)),
 		},
 	},
 	plugins: [react()],

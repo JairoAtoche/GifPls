@@ -1,7 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './gifs.scss';
-import '@/styles/theme.scss';
-import { ThemeContext } from '@/context/ThemeContext';
 import Searcher from '@/components/Searcher/Searcher';
 import Section from '@/components/Section/Section';
 import SkeletonDefault from '@/components/SkeletonDefault/SkeletonDefault';
@@ -17,9 +15,8 @@ const Gifs = () => {
 	/*
 	 */
 
-	const { theme } = useContext(ThemeContext);
 	return (
-		<main className={`gif theme-page--${theme}`}>
+		<main>
 			<section className='section-intro'>
 				<h1 className='section-intro__h1'>GIFPls</h1>
 				<p className='section-intro__p'>
@@ -32,7 +29,7 @@ const Gifs = () => {
 				<SkeletonDefault
 					subtitle='Aún no tenemos ninguna búsqueda tuya ¿Qué esperas para empezar a buscar?'
 					paragraph='Explora y descubre divertidos gif y clips con sonido para animar tus conversaciones'
-					source={gif.data}
+					source={gif.img}
 					alternative={gif.title}
 				/>
 			</Section>

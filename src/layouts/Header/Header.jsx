@@ -35,7 +35,7 @@ const Header = () => {
 					/>
 				</NavLink>
 				<div className='header__content'>
-					<Button name={`Random ${btn}`} />
+					<Button to={CLIP} name={`Random ${btn}`} />
 					<MenuIcon
 						handleVisible={handleVisible}
 						visible={`${close ? 'icon-close' : ''}`}

@@ -1,5 +1,7 @@
 .button {
-  width: 110px;
+  min-width: 110px;
+	max-width: 250px;
+	padding: 0 10px;
   height: 30px;
 	background-color: var(--purple);
 	border-radius: 10px;
@@ -7,6 +9,11 @@
 	color: var(--white);
 	font-size: 14px;
 	font-weight: bold;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	text-decoration: none;
 	cursor: pointer;
 	transition-duration: .5s;
 	&:hover {
