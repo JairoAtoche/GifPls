@@ -8,7 +8,7 @@ import { AiFillHome } from 'react-icons/ai';
 
 const Error404 = () => {
 	const navigate = useNavigate();
-	const data = useData('error');
+	const data = useData('random', 'error');
 
 	useEffect(() => {
 		navigate('/error404');
@@ -16,10 +16,11 @@ const Error404 = () => {
 
 	return (
 		<>
+			{console.log(data)}
 			<SkeletonDefault
 				subtitle='ERROR 404'
 				paragraph='La página que buscas no existe.'
-				source={data.img}
+				source={data.image}
 				alternative={data.title}
 			/>
 			<Button to={GIF} name='Regresar a la página inicial'>

@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react';
 import { getData } from '@/services/getData';
 
 const useData = name => {
-	const [gif, setGif] = useState([]);
+	const [data, setData] = useState([]);
 
 	useEffect(() => {
-		getData(name).then(data => setGif(data));
+		getData(name).then(data => setData(data));
 	}, []);
 
-	return gif;
+	return data;
 };
 
 export default useData;

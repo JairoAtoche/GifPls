@@ -8,16 +8,12 @@ import { NavLink, useHref } from 'react-router-dom';
 import { GIF, CLIP } from '@/router/path';
 import { ThemeContext } from '@/context/ThemeContext';
 import '@/styles/theme.scss';
-import { getData } from '@/services/getData';
 
 const Header = () => {
 	const [close, setClose] = useState(false);
 	const handleVisible = () => {
 		close ? setClose(false) : setClose(true);
 	};
-
-	const data = getData('');
-	console.log('random ', data);
 	// Cierra el el side menu cuando cambie la url
 	const ref = useHref();
 	useEffect(() => {
