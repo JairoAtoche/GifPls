@@ -5,6 +5,7 @@ import Section from '@/components/Section/Section';
 import SkeletonDefault from '@/components/SkeletonDefault/SkeletonDefault';
 import useData from '@/hooks/useData';
 import Title from '@/components/Title/Title';
+import Trending from '@/components/Trending/Trending';
 import { v4 as uuidv4 } from 'uuid';
 
 const Gifs = () => {
@@ -30,10 +31,13 @@ const Gifs = () => {
 				/>
 			</Section>
 
-			<Section subtitle='Últimas tendencias'></Section>
-			{trends.map(item => (
-				<h4 key={uuidv4()}>{item}</h4>
-			))}
+			<Section subtitle='Últimas tendencias'>
+				<div className='trend-container'>
+					{trends.map(item => (
+						<Trending key={uuidv4()} name={item} />
+					))}
+				</div>
+			</Section>
 		</main>
 	);
 };

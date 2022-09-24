@@ -19,7 +19,7 @@ const App = () => {
 			<main className={`gif theme-page--${theme}`}>
 				<Routes>
 					<Route path={GIF} element={<Gifs />} />
-					<Route path={CLIP} element={<Clips />} />
+					<Route path={`${CLIP}/:id`} element={<Clips />} />
 					<Route path={FAVORITOS} element={<Favoritos />} />
 					<Route path='*' element={<Error404 />} />
 				</Routes>

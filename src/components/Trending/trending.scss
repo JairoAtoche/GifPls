@@ -1,0 +1,24 @@
+.trending {  
+  background-color: var(--color);
+  @for $i from 0 to 30 {
+    &:nth-child(#{$i}) {
+      --color: #{rgba(random(255),random(255),random(255))};
+    }
+  }
+  transition: all .5s ease;
+  padding: 5px;
+  &:hover {
+    background-color: var(--purple);
+    color: var(--white-dark);
+  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trending a {
+  display: inline;
+  text-decoration: none;
+  color: var(--white-dark);
+  font-size: 16px;
+}
