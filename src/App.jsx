@@ -6,7 +6,7 @@ import Clips from '@/pages/Clips';
 import Favoritos from '@/pages/Favoritos';
 import Error404 from '@/pages/404/Error404';
 import Header from '@/layouts/Header';
-
+import Footer from '@/layouts/Footer';
 import '@/styles/theme.scss';
 import { ThemeContext } from '@/context/ThemeContext';
 
@@ -24,6 +24,7 @@ const App = () => {
 					<Route path='*' element={<Error404 />} />
 				</Routes>
 			</main>
+			<Footer />
 		</div>
 	);
 };

@@ -1,4 +1,14 @@
 .theme {
+  &-footer--light {
+    color: var(--black-light);
+    background-color: var(--white-dark);
+    border-top: 1px solid var(--black-light);
+  }
+  &-footer--dark {
+    color: var(--white-dark);
+    background-color: var(--black-light);
+    border-top: 1px solid var(--white-dark);
+  }
   // background nav
   &--nav-light {
     background-color: var(--white-dark);
@@ -40,9 +50,11 @@
   }
   &-color--light {
     color: var(--black-light);
+    text-decoration: none;
   }
   &-color--dark {
     color: var(--white-dark);
+    text-decoration: none;
   }
   &-page--light {    
     background-color: var(--white-dark);
@@ -85,4 +97,6 @@
       border-bottom: 1px solid var(--white-dark);
     }
   }
+  
+  
 }

@@ -30,7 +30,7 @@ body {
   font-family: 'Lato', sans-serif;
 }
 main {
-  padding-top: 45px;
+  padding-top: 30px;
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -39,4 +39,14 @@ main {
 }
 #root {
   width: 100%;
+}
+h1 {
+  font-size: 41px;
+  font-weight: bold;
+  padding-top: 10px;
+}
+h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0 4px;
 }

@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
-import { GIF, CLIP, FAVORITOS } from '@/router/path';
+import { GIF, STICKER, CLIP, FAVORITOS } from '@/router/path';
 import { AiOutlineFileGif, AiFillHeart } from 'react-icons/ai';
 import { MdVideoLibrary } from 'react-icons/md';
+import { BiSticker } from 'react-icons/bi';
 import MenuItem from '../MenuItem';
 import PropTypes from 'prop-types';
 import './menuside.scss';
@@ -15,6 +16,9 @@ const MenuSide = ({ visible }) => {
 		<ul className={`nav__ul ${visible} theme--bg-${theme}`}>
 			<MenuItem to={GIF} name='GIF'>
 				<AiOutlineFileGif />
+			</MenuItem>
+			<MenuItem to={STICKER} name='STICKERS'>
+				<BiSticker />
 			</MenuItem>
 			<MenuItem to={CLIP} name='CLIPS'>
 				<MdVideoLibrary />

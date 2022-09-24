@@ -2,7 +2,7 @@ import { URL, API_KEY } from '@/services/config';
 
 export const getData = async word => {
 	const response = await fetch(
-		`${URL}/gifs/random?api_key=${API_KEY}&tag=${word}`
+		`${URL}/gifs/random?api_key=${API_KEY}&tag=${word === '' ? word : ''}`
 	);
 	const res = await response.json();
 	const { id, title, images } = await res.data;

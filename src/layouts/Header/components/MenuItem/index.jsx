@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { ThemeContext } from '@/context/ThemeContext';
 import '@/styles/theme.scss';
-const MenuItem = ({ children, to, name }) => {
+const MenuItem = ({ children, to, name, isActive = true }) => {
 	const { theme } = useContext(ThemeContext);
 	return (
 		<li className='menu-item'>
@@ -12,7 +12,7 @@ const MenuItem = ({ children, to, name }) => {
 				{children}
 				{name}
 			</NavLink>
-			<hr className={`hr theme-border--${theme}`} />
+			{isActive ? <hr className={`hr theme-border--${theme}`} /> : ''}
 		</li>
 	);
 };
@@ -21,6 +21,7 @@ MenuItem.propTypes = {
 	children: PropTypes.element,
 	to: PropTypes.string,
 	name: PropTypes.string,
+	isActive: PropTypes.bool,
 };
 
 export default MenuItem;

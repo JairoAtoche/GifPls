@@ -1,0 +1,24 @@
+.item-list {
+  list-style: none;
+}
+.item-link {
+  font-size: 12px;
+  text-decoration: none;
+  display: inline;
+  gap: 10px;
+  transition: .5s;
+  
+  & svg {    
+    margin-right: 5px;
+  }
+  
+  &--dark {
+    color: var(--white-dark);
+  }
+  &--light {
+    color: var(--black-light);
+  }
+  &:hover {
+    padding-left: 10px;
+  }
+}

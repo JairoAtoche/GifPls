@@ -4,6 +4,7 @@ import Searcher from '@/components/Searcher/Searcher';
 import Section from '@/components/Section/Section';
 import SkeletonDefault from '@/components/SkeletonDefault/SkeletonDefault';
 import { getData } from '@/services/getData';
+import Title from '@/components/Title/Title';
 
 const Gifs = () => {
 	const [gif, setGif] = useState([]);
@@ -18,7 +19,7 @@ const Gifs = () => {
 	return (
 		<main>
 			<section className='section-intro'>
-				<h1 className='section-intro__h1'>GIFPls</h1>
+				<Title />
 				<p className='section-intro__p'>
 					Encuentra los mejores gif, stickers animados y clips con sonido para
 					darle diversión y transmitir visualmente tus mensajes.
