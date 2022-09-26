@@ -3,20 +3,38 @@ import './searcher.scss';
 import { ThemeContext } from '@/context/ThemeContext';
 import '@/styles/theme.scss';
 import { BiSearchAlt } from 'react-icons/bi';
+import { SearchContext } from '@/context/SearchContext';
+import useData from '@/hooks/useData';
 
 const Searcher = () => {
 	const { theme } = useContext(ThemeContext);
+
+	const { search, handleSearch } = useContext(SearchContext);
+
+	const handleChange = e => {
+		handleSearch(e.target.value);
+	};
+
+	const handleSubmit = e => {
+		e.preventDefault();
+	};
+
+	const searchi = useData('search', search);
+	console.log(searchi);
 	return (
-		<div className='diva'>
+		<form className='diva' onSubmit={handleSubmit}>
 			<input
+				type='text'
 				className={`searcher-input theme-input--${theme}`}
 				placeholder='Escribe una palabra o frase'
+				value={search}
+				onChange={handleChange}
 			/>
-			<button className='searcher-btn'>
+			<button type='submit' className='searcher-btn'>
 				<BiSearchAlt className='searcher-icon' />
 				BUSCAR
 			</button>
-		</div>
+		</form>
 	);
 };
 

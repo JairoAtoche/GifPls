@@ -1,10 +1,9 @@
 import React from 'react';
-import Title from '@/components/Title/Title';
 
 const Detail = () => {
 	return (
 		<>
-			<Title />
+			<h1>GifPls</h1>
 		</>
 	);
 };
