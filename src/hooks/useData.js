@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { getData } from '@/services/getData';
 
-const useData = name => {
+const useData = (type, name) => {
 	const [data, setData] = useState([]);
 
 	useEffect(() => {
-		getData(name).then(data => setData(data));
+		getData(type, name).then(data => setData(data));
 	}, []);
 
 	return data;

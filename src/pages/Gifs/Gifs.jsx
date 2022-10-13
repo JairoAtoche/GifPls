@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './gifs.scss';
 import Searcher from '@/components/Searcher/Searcher';
 import Section from '@/components/Section/Section';
@@ -6,13 +6,18 @@ import SkeletonDefault from '@/components/SkeletonDefault/SkeletonDefault';
 import useData from '@/hooks/useData';
 import Trending from '@/components/Trending/Trending';
 import { v4 as uuidv4 } from 'uuid';
-import { SearchContext } from '@/context/SearchContext';
+import { SearcherContext } from '@/context/SearcherContext';
+import { getData } from '@/services/getData';
 
 const Gifs = () => {
-	const gif = useData('random', 'error');
+	const [search, setSearch] = useState([]);
+	const gif = useData('random', 'escribir');
 	const trends = useData('trending');
 
-	const { search } = useContext(SearchContext);
+	const { searcher } = useContext(SearcherContext);
+	useEffect(() => {
+		getData('search', searcher).then(item => setSearch(item));
+	}, [searcher]);
 
 	return (
 		<main>
@@ -25,16 +30,23 @@ const Gifs = () => {
 				<Searcher />
 			</section>
 			<Section subtitle='Gif'>
-				{search === [] ? (
-					<SkeletonDefault
-						subtitle='Aún no tenemos ninguna búsqueda tuya ¿Qué esperas para empezar a buscar?'
-						paragraph='Explora y descubre divertidos gif y clips con sonido para animar tus conversaciones'
-						source={gif.image}
-						alternative={gif.title}
-					/>
-				) : (
-					<h4>{`result` + search}</h4>
-				)}
+				<>
+					{searcher === '' ? (
+						<SkeletonDefault
+							subtitle='Aún no tenemos ninguna búsqueda tuya ¿Qué esperas para empezar a buscar?'
+							paragraph='Explora y descubre divertidos gif y clips con sonido para animar tus conversaciones'
+							source={gif.image}
+							alternative={gif.title}
+						/>
+					) : (
+						search.map(el => (
+							<div key={el.id}>
+								<h4>{el.title}</h4>
+								<img src={el.image} alt='' />
+							</div>
+						))
+					)}
+				</>
 			</Section>
 			<Section subtitle='Últimas tendencias'>
 				<div className='trend-container'>

@@ -34,6 +34,5 @@ export const getData = async (typeEndpoint, word) => {
 		return data;
 	}
 	if (typeEndpoint === 'trending') data = await res.data.map(data => data);
-
 	return data;
 };

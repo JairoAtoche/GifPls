@@ -4,13 +4,13 @@ import App from './App';
 import '@/styles/normalize.scss';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from '@/context/ThemeContext';
-import { SearchProvider } from '@/context/SearchContext';
+import { SearcherProvider } from '@/context/SearcherContext';
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<BrowserRouter>
 		<ThemeProvider>
-			<SearchProvider>
+			<SearcherProvider>
 				<App />
-			</SearchProvider>
+			</SearcherProvider>
 		</ThemeProvider>
 	</BrowserRouter>
 );

@@ -1,35 +1,43 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import './searcher.scss';
 import { ThemeContext } from '@/context/ThemeContext';
 import '@/styles/theme.scss';
 import { BiSearchAlt } from 'react-icons/bi';
-import { SearchContext } from '@/context/SearchContext';
-import useData from '@/hooks/useData';
-
+import { SearcherContext } from '@/context/SearcherContext';
+import { useNavigate } from 'react-router-dom';
 const Searcher = () => {
 	const { theme } = useContext(ThemeContext);
 
-	const { search, handleSearch } = useContext(SearchContext);
+	const [form, setForm] = useState('');
+
+	const navigate = useNavigate();
+
+	const { setSearcher } = useContext(SearcherContext);
 
 	const handleChange = e => {
-		handleSearch(e.target.value);
+		setForm(e.target.value);
 	};
 
 	const handleSubmit = e => {
 		e.preventDefault();
+		navigate({
+			search: `?search=${form}`,
+		});
+		e.target.reset();
+		setSearcher(form);
 	};
 
-	const searchi = useData('search', search);
-	console.log(searchi);
 	return (
 		<form className='diva' onSubmit={handleSubmit}>
 			<input
 				type='text'
 				className={`searcher-input theme-input--${theme}`}
 				placeholder='Escribe una palabra o frase'
-				value={search}
+				name='search'
+				value={form}
 				onChange={handleChange}
 			/>
+
 			<button type='submit' className='searcher-btn'>
 				<BiSearchAlt className='searcher-icon' />
 				BUSCAR
