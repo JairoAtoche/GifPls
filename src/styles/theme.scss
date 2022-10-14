@@ -68,9 +68,10 @@
   &-input {
     &--light {   
       background-color: var(--white-dark);
+      
     }
     &--dark {
-      background-color: var(--black-light);
+      background-color: var(--black);
       caret-color: var(--white-dark);
       color: var(--white);
       &::placeholder {
@@ -98,5 +99,11 @@
     }
   }
   
-  
+  &-suggestion--dark {
+    background-color: var(--black);
+    color: var(--white-dark);
+    &:hover {
+      background-color: var(--black-light);
+    }
+  }  
 }

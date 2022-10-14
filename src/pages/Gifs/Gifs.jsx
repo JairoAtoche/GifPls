@@ -8,16 +8,21 @@ import Trending from '@/components/Trending/Trending';
 import { v4 as uuidv4 } from 'uuid';
 import { SearcherContext } from '@/context/SearcherContext';
 import { getData } from '@/services/getData';
+import Card from '@/components/Card/Card';
+import { useLocation } from 'react-router-dom';
 
 const Gifs = () => {
 	const [search, setSearch] = useState([]);
 	const gif = useData('random', 'escribir');
 	const trends = useData('trending');
+	const location = useLocation();
 
-	const { searcher } = useContext(SearcherContext);
+	const { searcher, setSearcher } = useContext(SearcherContext);
+
 	useEffect(() => {
 		getData('search', searcher).then(item => setSearch(item));
-	}, [searcher]);
+		if (location.search === '') setSearcher('');
+	}, [searcher, location]);
 
 	return (
 		<main>
@@ -39,12 +44,11 @@ const Gifs = () => {
 							alternative={gif.title}
 						/>
 					) : (
-						search.map(el => (
-							<div key={el.id}>
-								<h4>{el.title}</h4>
-								<img src={el.image} alt='' />
-							</div>
-						))
+						<div className='container-result'>
+							{search.map(el => (
+								<Card key={el.id} title={el.title} img={el.image} />
+							))}
+						</div>
 					)}
 				</>
 			</Section>
