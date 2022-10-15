@@ -1,5 +1,12 @@
-.gif {
-
+.container-result {
+  display: flex;
+  flex-direction: row;
+	flex-wrap: wrap;
+  width: 80vw;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
 }
 .section-intro {
   width: 100%;
@@ -24,13 +31,4 @@
   gap: 5px;
   padding: 20px;
   width: 100%;
-}
-
-.container-result {
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
 }

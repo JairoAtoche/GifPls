@@ -5,7 +5,7 @@ export const getData = async (typeEndpoint, word) => {
 	if (typeEndpoint === 'random')
 		endpoint = `${URL}/gifs/${typeEndpoint}?api_key=${API_KEY}&tag=${word}`;
 	if (typeEndpoint === 'search')
-		endpoint = `${URL}/gifs/${typeEndpoint}?api_key=${API_KEY}&q=${word}&limit=10`;
+		endpoint = `${URL}/gifs/${typeEndpoint}?api_key=${API_KEY}&q=${word}&limit=15`;
 	if (typeEndpoint === 'trending')
 		endpoint = `${URL}/${typeEndpoint}/searches?api_key=${API_KEY}`;
 

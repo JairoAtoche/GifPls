@@ -5,7 +5,7 @@ import './header.scss';
 import MenuIcon from './components/MenuIcon';
 import MenuSide from './components/MenuSide';
 import { NavLink, useHref } from 'react-router-dom';
-import { GIF, CLIP } from '@/router/path';
+import { GIF, STICKER } from '@/router/path';
 import { ThemeContext } from '@/context/ThemeContext';
 import '@/styles/theme.scss';
 
@@ -21,7 +21,7 @@ const Header = () => {
 	}, [ref]);
 
 	const { theme } = useContext(ThemeContext);
-	const btn = ref === CLIP ? 'Clip' : 'Gif';
+	const btn = ref === STICKER ? 'Sticker' : 'Gif';
 	const goTopPage = () => {
 		window.scrollTo(0, 0);
 	};
@@ -36,7 +36,7 @@ const Header = () => {
 					/>
 				</NavLink>
 				<div className='header__content'>
-					<Button to={CLIP} name={`Random ${btn}`} />
+					<Button to={STICKER} name={`Random ${btn}`} />
 					<MenuIcon
 						handleVisible={handleVisible}
 						visible={`${close ? 'icon-close' : ''}`}
