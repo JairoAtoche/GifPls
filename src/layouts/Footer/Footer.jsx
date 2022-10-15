@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
 import ItemLink from './components/ItemLink/ItemLink';
 import { AiOutlineFileGif, AiFillHeart } from 'react-icons/ai';
-import { MdVideoLibrary } from 'react-icons/md';
 import { BiSticker } from 'react-icons/bi';
-import { GIF, STICKER, CLIP, FAVORITOS } from '@/router/path';
+import { GIF, STICKER, FAVORITOS } from '@/router/path';
 import { ThemeContext } from '@/context/ThemeContext';
 import './footer.scss';
 import '@/styles/theme.scss';

@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
-import { GIF, STICKER, CLIP, FAVORITOS } from '@/router/path';
+import { GIF, STICKER, FAVORITOS } from '@/router/path';
 import { AiOutlineFileGif, AiFillHeart } from 'react-icons/ai';
-import { MdVideoLibrary } from 'react-icons/md';
 import { BiSticker } from 'react-icons/bi';
 import MenuItem from '../MenuItem';
 import PropTypes from 'prop-types';

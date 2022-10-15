@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { GIF, CLIP, FAVORITOS } from '@/router/path';
+import { GIF, FAVORITOS } from '@/router/path';
 import { Routes, Route } from 'react-router-dom';
 import Gifs from '@/pages/Gifs';
 import Favoritos from '@/pages/Favoritos';
