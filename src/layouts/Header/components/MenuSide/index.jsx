@@ -20,9 +20,6 @@ const MenuSide = ({ visible }) => {
 			<MenuItem to={STICKER} name='STICKERS'>
 				<BiSticker />
 			</MenuItem>
-			<MenuItem to={CLIP} name='CLIPS'>
-				<MdVideoLibrary />
-			</MenuItem>
 			<MenuItem to={FAVORITOS} name='MIS FAVORITOS'>
 				<AiFillHeart />
 			</MenuItem>

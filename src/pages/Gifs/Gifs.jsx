@@ -29,8 +29,8 @@ const Gifs = () => {
 			<section className='section-intro'>
 				<h1>GifPls</h1>
 				<p className='section-intro__p'>
-					Encuentra los mejores gif, stickers animados y clips con sonido para
-					darle diversión y transmitir visualmente tus mensajes.
+					Encuentra los mejores gif y stickers animados para darle diversión y
+					transmitir visualmente tus mensajes.
 				</p>
 				<Searcher />
 			</section>

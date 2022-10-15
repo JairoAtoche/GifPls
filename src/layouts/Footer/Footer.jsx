@@ -17,9 +17,9 @@ const Footer = () => {
 				<div className='footer__empresa'>
 					<h4>GIFPls</h4>
 					<p className='footer__p'>
-						GIFPls es un sitio web donde encontrarás los mejores gif, stickers
-						animados y clips con sonido. Utilizamos Giphy SDK y API para
-						integrar su biblioteca de de videos y gif más grandes del mundo.
+						GIFPls es un sitio web donde encontrarás los mejores gif y stickers
+						animados. Utilizamos Giphy SDK y API para integrar su biblioteca de
+						de videos y gif más grandes del mundo.
 					</p>
 				</div>
 				<div className='explora'>
@@ -30,9 +30,6 @@ const Footer = () => {
 						</ItemLink>
 						<ItemLink to={STICKER} name='Sticker'>
 							<BiSticker />
-						</ItemLink>
-						<ItemLink to={CLIP} name='Clip con sonido'>
-							<MdVideoLibrary />
 						</ItemLink>
 						<ItemLink to={FAVORITOS} name='Mis favoritos'>
 							<AiFillHeart />
