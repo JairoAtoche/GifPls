@@ -6,8 +6,11 @@ import './item-link.scss';
 
 const ItemLink = ({ children, to, name }) => {
 	const { theme } = useContext(ThemeContext);
+	const goTopPage = () => {
+		window.scrollTo(0, 0);
+	};
 	return (
-		<li className='item-list'>
+		<li className='item-list' onClick={goTopPage}>
 			<Link to={to} className={`item-link item-link--${theme}`}>
 				{children}
 				{name}

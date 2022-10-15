@@ -22,11 +22,13 @@ const Header = () => {
 
 	const { theme } = useContext(ThemeContext);
 	const btn = ref === CLIP ? 'Clip' : 'Gif';
-
+	const goTopPage = () => {
+		window.scrollTo(0, 0);
+	};
 	return (
 		<header className='header'>
 			<nav className={`header__nav nav theme--nav-${theme}`}>
-				<NavLink to={GIF} className='container-logo'>
+				<NavLink to={GIF} className='container-logo' onClick={goTopPage}>
 					<img
 						src={logo}
 						alt='logo'
