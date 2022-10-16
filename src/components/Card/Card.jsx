@@ -1,20 +1,19 @@
-import React, { useContext } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 import { BsLink45Deg } from 'react-icons/bs';
-import { ThemeContext } from '@/context/ThemeContext';
-import './card.scss';
 import Swal from 'sweetalert2';
 import 'animate.css';
+import './card.scss';
 
-const Card = ({ title, img }) => {
-	const { theme } = useContext(ThemeContext);
-	// Por ahora el favorito cambia con el tema de color, luego cambio
+const Card = ({ id, title, img }) => {
+	const [fav, setFav] = useState(false);
 	const filtro = title.includes(' GIF by ') ? ' GIF by ' : ' Sticker by ';
 	const indiceAutor = title.indexOf(filtro);
 	const titulo = title.substring(0, indiceAutor);
-	const autor = title.substring(indiceAutor + filtro.length);
+	// const autor = title.substring(indiceAutor + filtro.length);
+
 	let timerInterval;
 	const copyURL = () => {
 		navigator.clipboard.writeText(img);
@@ -43,13 +42,25 @@ const Card = ({ title, img }) => {
 		});
 	};
 
+	let favoritos = JSON.parse(localStorage.getItem('favoritos') || '[]');
+	const handleStorage = () => {
+		favoritos = JSON.parse(localStorage.getItem('favoritos') || '[]');
+		if (!favoritos.includes(id)) {
+			favoritos.push(id);
+		} else {
+			favoritos = favoritos.filter(item => item !== id);
+		}
+		setFav(!fav);
+		localStorage.setItem('favoritos', JSON.stringify(favoritos));
+	};
+
 	return (
 		<div className='card'>
 			<button className='card__btn card__btn--url' onClick={copyURL}>
 				<BsLink45Deg />
 			</button>
-			<button className='card__btn'>
-				{theme === 'dark' ? <AiFillHeart /> : <AiOutlineHeart />}
+			<button className='card__btn' onClick={handleStorage}>
+				{favoritos.includes(id) ? <AiFillHeart /> : <AiOutlineHeart />}
 			</button>
 			<p className='card__title'>{titulo}</p>
 
@@ -63,6 +74,7 @@ const Card = ({ title, img }) => {
 export default Card;
 
 Card.propTypes = {
+	id: PropTypes.string,
 	title: PropTypes.string,
 	img: PropTypes.string,
 };

@@ -46,7 +46,7 @@ const Gifs = () => {
 					) : (
 						<div className='container-result'>
 							{search.map(el => (
-								<Card key={el.id} title={el.title} img={el.image} />
+								<Card key={el.id} id={el.id} title={el.title} img={el.image} />
 							))}
 						</div>
 					)}
