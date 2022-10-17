@@ -21,7 +21,6 @@ const Header = () => {
 	}, [ref]);
 
 	const { theme } = useContext(ThemeContext);
-	const btn = ref === STICKER ? 'Sticker' : 'Gif';
 	const goTopPage = () => {
 		window.scrollTo(0, 0);
 	};
@@ -37,7 +36,7 @@ const Header = () => {
 					/>
 				</NavLink>
 				<div className='header__content'>
-					<Button to={STICKER} name={`Random ${btn}`} />
+					<Button name={`Random`} />
 					<MenuIcon
 						handleVisible={handleVisible}
 						visible={`${close ? 'icon-close' : ''}`}
