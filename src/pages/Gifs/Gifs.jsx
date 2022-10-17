@@ -11,12 +11,14 @@ import { getData } from '@/services/getData';
 import Card from '@/components/Card/Card';
 import { useLocation } from 'react-router-dom';
 
+const initialPage = 0;
 const Gifs = () => {
 	const [search, setSearch] = useState([]);
 	const gif = useData('random', 'escribir');
 	const trends = useData('trending');
 	const location = useLocation();
-
+	const [page, setPage] = useState(initialPage);
+	const [loadingNextPage, setLoadingNextPage] = useState(false);
 	const { searcher, setSearcher } = useContext(SearcherContext);
 
 	useEffect(() => {
@@ -24,6 +26,18 @@ const Gifs = () => {
 		if (location.search === '') setSearcher('');
 	}, [searcher, location]);
 
+	const handleNextPage = () => {
+		setPage(prevPage => prevPage + 1);
+	};
+
+	useEffect(() => {
+		if (page === initialPage) return;
+		setLoadingNextPage(true);
+		getData('search', searcher, page).then(nextGifs => {
+			setSearch(prevGif => prevGif.concat(nextGifs));
+			setLoadingNextPage(false);
+		});
+	}, [searcher, page]);
 	return (
 		<main>
 			<section className='section-intro'>
@@ -48,6 +62,9 @@ const Gifs = () => {
 							{search.map(el => (
 								<Card key={el.id} id={el.id} title={el.title} img={el.image} />
 							))}
+							<button onClick={handleNextPage} className='btn-nextPage'>
+								Cargar más
+							</button>
 						</div>
 					)}
 				</>

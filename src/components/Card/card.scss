@@ -52,8 +52,7 @@
   object-fit: cover;
   display: block;
   @include skeleton();
-  min-width: 30px;
-  max-width: 250px !important;
-  min-width: 30px;
-  height: 250px !important;
+  min-width: 150px;
+  min-height: 150px;
+  max-width: 450px;
 }

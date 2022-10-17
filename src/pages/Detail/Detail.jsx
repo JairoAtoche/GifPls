@@ -1,7 +1,7 @@
 /* eslint-disable no-irregular-whitespace */
 import React, { useEffect, useState } from 'react';
 import { getId } from '@/services/getId';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Button from './components/Button';
 import { AiFillHeart } from 'react-icons/ai';
 import { FiDownload } from 'react-icons/fi';
@@ -17,7 +17,6 @@ const Detail = () => {
 	const titulo = title.substring(0, indiceAutor) || 'Detalle del GIF';
 	const autor = title.substring(indiceAutor + filtro.length);
 	const DOWNLOAD = image.substring(0, image.length - 9);
-	console.log(DOWNLOAD);
 
 	useEffect(() => {
 		getId(id).then(item => setDetail(item));
