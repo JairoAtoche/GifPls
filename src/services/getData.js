@@ -3,7 +3,7 @@ import { URL, API_KEY } from '@/services/config';
 export const getData = async (typeEndpoint, word) => {
 	let endpoint;
 	if (typeEndpoint === 'random')
-		endpoint = `${URL}/gifs/${typeEndpoint}?api_key=${API_KEY}&tag=${word}`;
+		endpoint = `${URL}/gifs/${typeEndpoint}?api_key=${API_KEY}&q=${word}`;
 	if (typeEndpoint === 'search')
 		endpoint = `${URL}/gifs/${typeEndpoint}?api_key=${API_KEY}&q=${word}&limit=15`;
 	if (typeEndpoint === 'trending')

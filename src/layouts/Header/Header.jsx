@@ -25,6 +25,7 @@ const Header = () => {
 	const goTopPage = () => {
 		window.scrollTo(0, 0);
 	};
+
 	return (
 		<header className='header'>
 			<nav className={`header__nav nav theme--nav-${theme}`}>
