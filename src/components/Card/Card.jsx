@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { DETAIL } from '@/router/path';
 import { Link } from 'react-router-dom';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 import { BsLink45Deg } from 'react-icons/bs';
@@ -12,7 +13,6 @@ const Card = ({ id, title, img }) => {
 	const filtro = title.includes(' GIF by ') ? ' GIF by ' : ' Sticker by ';
 	const indiceAutor = title.indexOf(filtro);
 	const titulo = title.substring(0, indiceAutor);
-	// const autor = title.substring(indiceAutor + filtro.length);
 
 	let timerInterval;
 	const copyURL = () => {
@@ -63,8 +63,7 @@ const Card = ({ id, title, img }) => {
 				{favoritos.includes(id) ? <AiFillHeart /> : <AiOutlineHeart />}
 			</button>
 			<p className='card__title'>{titulo}</p>
-
-			<Link className='img-container'>
+			<Link to={`${DETAIL}/${id}`} className='img-container'>
 				<img src={img} alt={title} className='img' />
 			</Link>
 		</div>

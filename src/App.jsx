@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
-import { GIF, FAVORITOS } from '@/router/path';
+import { GIF, FAVORITOS, DETAIL } from '@/router/path';
 import { Routes, Route } from 'react-router-dom';
 import Gifs from '@/pages/Gifs';
 import Favoritos from '@/pages/Favoritos';
+import Detail from '@/pages/Detail';
 import Error404 from '@/pages/404/Error404';
 import Header from '@/layouts/Header';
 import Footer from '@/layouts/Footer';
@@ -19,6 +20,7 @@ const App = () => {
 				<Routes>
 					<Route path={GIF} element={<Gifs />} />
 					<Route path={FAVORITOS} element={<Favoritos />} />
+					<Route path={`${DETAIL}/:id`} element={<Detail />} />
 					<Route path='*' element={<Error404 />} />
 				</Routes>
 			</main>
