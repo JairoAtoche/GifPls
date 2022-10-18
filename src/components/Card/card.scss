@@ -1,7 +1,6 @@
 @import '@/styles/mixins';
 
 .card {
-  background-color: green;
   position: relative;
 
   &__btn {
@@ -43,7 +42,7 @@
 }
 
 .img-container{
-  background-color: red;
+  @include skeleton();
 }
 
 .img {
@@ -51,7 +50,6 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  @include skeleton();
   min-width: 150px;
   min-height: 150px;
   max-width: 450px;
