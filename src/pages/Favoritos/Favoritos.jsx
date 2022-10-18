@@ -33,14 +33,18 @@ const Favoritos = () => {
 			</motion.h1>
 			<Section subtitle='Lista de favoritos'>
 				<div className='favorite-container'>
-					{lista.map(item => (
-						<MotionFavoriteItem
-							key={item.id}
-							title={item.title}
-							image={item.image}
-							handleDelete={() => deleteFavorite(item.id)}
-						/>
-					))}
+					{!lista ? (
+						<p>La lista se encuentra vacia 😢</p>
+					) : (
+						lista.map(item => (
+							<MotionFavoriteItem
+								key={item.id}
+								title={item.title}
+								image={item.image}
+								handleDelete={() => deleteFavorite(item.id)}
+							/>
+						))
+					)}
 				</div>
 			</Section>
 		</main>
