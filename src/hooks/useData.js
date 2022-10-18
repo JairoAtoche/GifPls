@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { getData } from '@/services/getData';
 
-const useData = (type, name) => {
+const useData = (type, name, togle) => {
 	const [data, setData] = useState([]);
 
 	useEffect(() => {
-		getData(type, name).then(data => setData(data));
+		getData({ typeEndpoint: type, word: name, types: togle }).then(data =>
+			setData(data)
+		);
 	}, []);
 
 	return data;

@@ -36,7 +36,7 @@ const Header = () => {
 					/>
 				</NavLink>
 				<div className='header__content'>
-					<Button name={`Random`} />
+					<Button name={`RANDOM`} />
 					<MenuIcon
 						handleVisible={handleVisible}
 						visible={`${close ? 'icon-close' : ''}`}

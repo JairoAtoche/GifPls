@@ -43,6 +43,7 @@ const Card = ({ id, title, img }) => {
 	};
 
 	let favoritos = JSON.parse(localStorage.getItem('favoritos') || '[]');
+
 	const handleStorage = () => {
 		favoritos = JSON.parse(localStorage.getItem('favoritos') || '[]');
 		if (!favoritos.includes(id)) {
@@ -64,7 +65,7 @@ const Card = ({ id, title, img }) => {
 			</button>
 			<p className='card__title'>{titulo}</p>
 			<Link to={`${DETAIL}/${id}`} className='img-container'>
-				<img src={img} alt={title} className='img' />
+				<img loading='lazy' src={img} alt={title} className='img' />
 			</Link>
 		</div>
 	);

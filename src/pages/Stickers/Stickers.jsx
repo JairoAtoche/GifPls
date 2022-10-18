@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react';
-import './gifs.scss';
 import Searcher from '@/components/Searcher/Searcher';
 import Section from '@/components/Section/Section';
 import SkeletonDefault from '@/components/SkeletonDefault/SkeletonDefault';
@@ -12,7 +11,7 @@ import { useLocation } from 'react-router-dom';
 import Trending from '@/components/Trending/Trending';
 
 const initialPage = 0;
-const Gifs = () => {
+const Stickers = () => {
 	const [search, setSearch] = useState([]);
 	const gif = useData('random', 'escribir');
 	const trends = useData('trending');
@@ -25,7 +24,7 @@ const Gifs = () => {
 		getData({
 			typeEndpoint: 'search',
 			word: searcher,
-			format: 'gifs',
+			format: 'stickers',
 		}).then(item => setSearch(item));
 		if (location.search === '') setSearcher('');
 	}, [searcher, location]);
@@ -41,7 +40,7 @@ const Gifs = () => {
 			typeEndpoint: 'search',
 			word: searcher,
 			page,
-			format: 'gifs',
+			format: 'stickers',
 		}).then(nextGifs => {
 			setSearch(prevGif => prevGif.concat(nextGifs));
 			setLoadingNextPage(false);
@@ -57,7 +56,7 @@ const Gifs = () => {
 				</p>
 				<Searcher />
 			</section>
-			<Section subtitle='Gif'>
+			<Section subtitle='Stickers'>
 				<>
 					{searcher === '' ? (
 						<SkeletonDefault
@@ -88,5 +87,4 @@ const Gifs = () => {
 		</main>
 	);
 };
-
-export default Gifs;
+export default Stickers;

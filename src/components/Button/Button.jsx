@@ -10,7 +10,9 @@ const Button = ({ name, children }) => {
 	const [state, setState] = useState(true);
 
 	useEffect(() => {
-		getData('random').then(id => setId(id.id));
+		getData({ typeEndpoint: 'random', format: 'gifs' }).then(id =>
+			setId(id.id)
+		);
 	}, [state]);
 
 	return (
