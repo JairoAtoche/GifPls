@@ -1,0 +1,38 @@
+.favorite {
+  height: 100px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 80%;
+  gap: 10px;
+  border-bottom: 1px solid gray;
+  &:last-child {
+    border-bottom: none;
+  }
+  &__h2 {
+    font-size: 12px;
+  }
+
+  &__img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    &-container {
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__icon {
+    font-size: 20px;
+    cursor: pointer;
+    transition-duration: .5s;
+    &:hover {
+      transform: scale(1.2);
+      opacity: .8;
+    }
+  }
+}
