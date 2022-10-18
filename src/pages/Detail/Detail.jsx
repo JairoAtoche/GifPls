@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { getId } from '@/services/getId';
 import { useParams } from 'react-router-dom';
 import Button from './components/Button';
-import { AiFillHeart } from 'react-icons/ai';
+import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 import { FiDownload } from 'react-icons/fi';
 import './detail.scss';
 import { saveAs } from 'file-saver';
@@ -22,10 +22,23 @@ const Detail = () => {
 		getId(id).then(item => setDetail(item));
 	}, [id]);
 
-	const addFavorites = () => {};
 	const download = () => {
 		saveAs('image_url', `${DOWNLOAD}.gif`);
 	};
+
+	const [fav, setFav] = useState(false);
+	let favoritos = JSON.parse(localStorage.getItem('favoritos') || '[]');
+	const handleStorage = () => {
+		favoritos = JSON.parse(localStorage.getItem('favoritos') || '[]');
+		if (!favoritos.includes(id)) {
+			favoritos.push(id);
+		} else {
+			favoritos = favoritos.filter(item => item !== id);
+		}
+		setFav(!fav);
+		localStorage.setItem('favoritos', JSON.stringify(favoritos));
+	};
+
 	return (
 		<div className='detail'>
 			<h1 className='detail__h1'>{titulo}</h1>
@@ -40,13 +53,23 @@ const Detail = () => {
 				<p className='detail__p'>Tipo: </p>
 				<p className='detail__h2'>{filtro.substring(0, filtro.length - 4)}</p>
 			</div>
-
-			<Button
-				name='AGREGAR A FAVORITOS'
-				func={addFavorites}
-				icon={<AiFillHeart className='icon__btn' />}
-				color='red'
-			/>
+			<div>
+				{favoritos.includes(id) ? (
+					<Button
+						name='QUITAR DE FAVORITOS'
+						func={handleStorage}
+						icon={<AiOutlineHeart className='icon__btn' />}
+						color='red'
+					/>
+				) : (
+					<Button
+						name='AGREGAR A FAVORITOS'
+						func={handleStorage}
+						icon={<AiFillHeart className='icon__btn' />}
+						color='red'
+					/>
+				)}
+			</div>
 			<Button
 				name='DESCARGAR'
 				func={download}
