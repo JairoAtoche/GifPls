@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { SearcherContext } from '@/context/SearcherContext';
 
-const Trending = ({ name }) => {
+const Trending = React.forwardRef(({ name }, ref) => {
 	const id = name.split(' ').join('+');
 	const { setSearcher } = useContext(SearcherContext);
 
@@ -14,11 +14,13 @@ const Trending = ({ name }) => {
 	};
 
 	return (
-		<h3 className='trending' onClick={handleTrendring}>
+		<h3 className='trending' onClick={handleTrendring} ref={ref}>
 			<Link to={`?search=${id}`}>{name}</Link>
 		</h3>
 	);
-};
+});
+
+Trending.displayName = 'TrendingName';
 
 Trending.propTypes = {
 	name: PropTypes.string,

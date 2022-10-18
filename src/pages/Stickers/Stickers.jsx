@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, useRef } from 'react';
 import Searcher from '@/components/Searcher/Searcher';
 import Section from '@/components/Section/Section';
 import SkeletonDefault from '@/components/SkeletonDefault/SkeletonDefault';
@@ -9,8 +9,11 @@ import { getData } from '@/services/getData';
 import Card from '@/components/Card/Card';
 import { useLocation } from 'react-router-dom';
 import Trending from '@/components/Trending/Trending';
+import { motion, useInView } from 'framer-motion';
 
 const initialPage = 0;
+const MotionTrending = motion(Trending);
+
 const Stickers = () => {
 	const [search, setSearch] = useState([]);
 	const gif = useData('random', 'escribir');
@@ -20,6 +23,8 @@ const Stickers = () => {
 	const [loadingNextPage, setLoadingNextPage] = useState(false);
 	const { searcher, setSearcher } = useContext(SearcherContext);
 
+	const ref = useRef(null);
+	const isInView = useInView(ref);
 	useEffect(() => {
 		getData({
 			typeEndpoint: 'search',
@@ -49,11 +54,20 @@ const Stickers = () => {
 	return (
 		<main>
 			<section className='section-intro'>
-				<h1>GifPls</h1>
-				<p className='section-intro__p'>
+				<motion.h1
+					initial={{ opacity: 0, translateY: -10 }}
+					animate={{ opacity: 1, translateY: 0 }}
+					transition={{ ease: 'easeOut', duration: 0.5, delay: 0.4 }}>
+					GifPls
+				</motion.h1>
+				<motion.p
+					className='section-intro__p'
+					initial={{ opacity: 0, translateY: -50 }}
+					animate={{ opacity: 1, translateY: 0 }}
+					transition={{ ease: 'easeOut', duration: 0.5, delay: 0.3 }}>
 					Encuentra los mejores gif y stickers animados para darle diversión y
 					transmitir visualmente tus mensajes.
-				</p>
+				</motion.p>
 				<Searcher />
 			</section>
 			<Section subtitle='Stickers'>
@@ -78,9 +92,16 @@ const Stickers = () => {
 				</>
 			</Section>
 			<Section subtitle='Últimas tendencias'>
-				<div className='trend-container'>
-					{trends.map(item => (
-						<Trending key={uuidv4()} name={item} />
+				<div className='trend-container' ref={ref}>
+					{trends.map((item, i) => (
+						<MotionTrending
+							key={uuidv4()}
+							name={item}
+							initial={{ opacity: 0, translateY: -50 }}
+							animate={{ opacity: 1, translateY: 0 }}
+							transition={{ ease: 'easeOut', duration: 0.1, delay: i * 0.1 }}
+							ref={ref}
+						/>
 					))}
 				</div>
 			</Section>

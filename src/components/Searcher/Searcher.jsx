@@ -6,6 +6,7 @@ import { BiSearchAlt } from 'react-icons/bi';
 import { SearcherContext } from '@/context/SearcherContext';
 import { useNavigate } from 'react-router-dom';
 import Autocomplete from '@/components/Autocomplete/Autocomplete';
+import { motion } from 'framer-motion';
 
 const initialState = [];
 
@@ -54,7 +55,13 @@ const Searcher = () => {
 
 	return (
 		<>
-			<form className='diva' onSubmit={handleSubmit} autoComplete='off'>
+			<motion.form
+				className='diva'
+				onSubmit={handleSubmit}
+				autoComplete='off'
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ ease: 'easeOut', duration: 0.5, delay: 0.6 }}>
 				<input
 					type='text'
 					className={`searcher-input theme-input--${theme}`}
@@ -67,7 +74,7 @@ const Searcher = () => {
 					<BiSearchAlt className='searcher-icon' />
 					BUSCAR
 				</button>
-			</form>
+			</motion.form>
 			{suggestion.map(el => (
 				<Autocomplete key={el} name={el} handleSuggestion={handleSuggestion} />
 			))}
