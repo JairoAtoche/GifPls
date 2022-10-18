@@ -11,8 +11,6 @@ const Favoritos = () => {
 	const [lista, setLista] = useState([]);
 	const [state, setState] = useState(false);
 
-	const MotionFavoriteItem = motion(FavoriteItem);
-
 	useEffect(() => {
 		getFavorites(id).then(item => setLista(item));
 	}, [state]);
@@ -37,7 +35,7 @@ const Favoritos = () => {
 						<p>La lista se encuentra vacia 😢</p>
 					) : (
 						lista.map(item => (
-							<MotionFavoriteItem
+							<FavoriteItem
 								key={item.id}
 								title={item.title}
 								image={item.image}
