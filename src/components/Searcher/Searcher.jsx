@@ -7,6 +7,7 @@ import { SearcherContext } from '@/context/SearcherContext';
 import { useNavigate } from 'react-router-dom';
 import Autocomplete from '@/components/Autocomplete/Autocomplete';
 import { motion } from 'framer-motion';
+import { getSearch } from '@/services/getSearch';
 
 const initialState = [];
 
@@ -19,16 +20,10 @@ const Searcher = () => {
 
 	const { setSearcher } = useContext(SearcherContext);
 	const [suggestion, setSuggestion] = useState(initialState);
-	const endpoint = `https://api.giphy.com/v1/gifs/search/tags?api_key=mMtyVB2ByJS9Yfbu9VhdD0g8kPF41j32&q=${form}`;
+
 	useEffect(() => {
-		const buscarSugerencia = async () => {
-			const response = await fetch(endpoint);
-			const res = await response.json();
-			const data = await res.data.map(data => data.name);
-			return setSuggestion(data);
-		};
-		buscarSugerencia();
-	}, [endpoint]);
+		getSearch(form).then(item => setSuggestion(item));
+	}, [form]);
 
 	const handleChange = e => {
 		setForm(e.target.value);
