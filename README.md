@@ -6,18 +6,18 @@ Explora y descubre divertidos Gif y Stickers animados mediante este sitio web do
 
 ## Tabla de contenidos
 
-- [Características del proyecto](#📋-caracteristicas-del-proyecto)
-- [Flujo del sistema](#↪️-flujo-del-sistema)
-- [Tecnologías utilizadas](#🔧-tecnologías-utilizadas)
-  - [Diseño del prototipo](#📐-diseño-del-prototipo)
-  - [Entorno de configuración](#⚙️-entorno-de-configuración)
-  - [Tecnologías](#💻-tecnologías)
-  - [API](#☁️-api)
-  - [Librerias](#📚-librerias)
-- [Despliegue](#🚀-despliegue)
-- [Documentación](#📄-documentación)
+- [Características del proyecto](#caracteristicas-del-proyecto)
+- [Flujo del sistema](#↪flujo-del-sistema)
+- [Tecnologías utilizadas](#tecnologías-utilizadas)
+  - [Diseño del prototipo](#diseño-del-prototipo)
+  - [Entorno de configuración](#entorno-de-configuración)
+  - [Tecnologías](#tecnologías)
+  - [API](#api)
+  - [Librerias](#librerias)
+- [Despliegue](#despliegue)
+- [Documentación](#documentación)
 
-## 📋 Caracteristicas del proyecto
+## 📋 Caracteristicas del proyecto <a name="caracteristicas-del-proyecto"></a>
 
 <img src="https://user-images.githubusercontent.com/44626985/197085733-5f6e30d3-ef8c-4cc8-9802-155b398650a3.gif" width="180" align="left" />
 
@@ -53,20 +53,20 @@ GIFPls permite que puedas cambiar entre el modo claro y oscuro para que puedas b
 Agrega, elimina y comparte los gifs y stickers que te gustaron para poder encontrarlos más fácilmente en el futuro. <br>
 **_Nota: La lista de favoritos se almacenan en el navegador sin necesidad de crearse una cuenta._**
 
-## ↪️ Flujo del sistema
+## ↪️ Flujo del sistema <a name="flujo-del-sistema"></a>
 
-## 🔧 Tecnologías utilizadas
+## 🔧 Tecnologías utilizadas <a name="tecnologias-utilizadas"></a>
 
-### 📐 Diseño del prototipo
+### 📐 Diseño del prototipo <a name="diseño-del-prototipo"></a>
 
-### ⚙️ Entorno de configuración
+### ⚙️ Entorno de configuración <a name="entorno-de-configuracion"></a>
 
-### 💻 Tecnologías
+### 💻 Tecnologías <a name="tecnologias"></a>
 
-### ☁️ API
+### ☁️ API <a name="api"></a>
 
-### 📚 Librerias
+### 📚 Librerias <a name="librerias"></a>
 
-## 🚀 Despliegue
+## 🚀 Despliegue <a name="despliegue"></a>
 
-## 📄 Documentación
+## 📄 Documentación <a name="documentacion"></a>
