@@ -7,7 +7,7 @@ Explora y descubre divertidos Gif y Stickers animados mediante este sitio web do
 ## Tabla de contenidos
 
 - [Características del proyecto](#caracteristicas-del-proyecto)
-- [Flujo del sistema](#↪flujo-del-sistema)
+- [Flujo del sistema](#flujo-del-sistema)
 - [Tecnologías utilizadas](#tecnologías-utilizadas)
   - [Diseño del prototipo](#diseño-del-prototipo)
   - [Entorno de configuración](#entorno-de-configuración)
