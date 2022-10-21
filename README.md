@@ -55,13 +55,13 @@ Agrega, elimina y comparte los gifs y stickers que te gustaron para poder encont
 
 ## ↪️ Flujo del sistema <a name="flujo-del-sistema"></a>
 
-## 🔧 Tecnologías utilizadas <a name="tecnologias-utilizadas"></a>
+## 🔧 Tecnologías utilizadas <a name="tecnologías-utilizadas"></a>
 
 ### 📐 Diseño del prototipo <a name="diseño-del-prototipo"></a>
 
-### ⚙️ Entorno de configuración <a name="entorno-de-configuracion"></a>
+### ⚙️ Entorno de configuración <a name="entorno-de-configuración"></a>
 
-### 💻 Tecnologías <a name="tecnologias"></a>
+### 💻 Tecnologías <a name="tecnologías"></a>
 
 ### ☁️ API <a name="api"></a>
 
