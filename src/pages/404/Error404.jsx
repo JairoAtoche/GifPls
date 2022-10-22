@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import SkeletonDefault from '@/components/SkeletonDefault/SkeletonDefault';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { GIF } from '@/router/path';
 import useData from '@/hooks/useData';
 import Button from '@/components/Button/Button';
 import { AiFillHome } from 'react-icons/ai';
+import './error404.scss';
 
 const Error404 = () => {
 	const navigate = useNavigate();
@@ -23,9 +24,10 @@ const Error404 = () => {
 				source={data.image}
 				alternative={data.title}
 			/>
-			<Button to={GIF} name='Regresar a la página inicial'>
+			<Link to={GIF} className='error__btn'>
 				<AiFillHome />
-			</Button>
+				Regresar a la página inicial
+			</Link>
 		</>
 	);
 };

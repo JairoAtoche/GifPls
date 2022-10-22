@@ -1,0 +1,17 @@
+.error__btn {
+  background-color: var(--purple);
+  color: var(--white);
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 30px;
+  width: 250px;
+  border-radius: 10px;
+  transition-duration: .5s;
+  &:hover {
+    opacity: .8;
+  }
+}
