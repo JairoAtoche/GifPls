@@ -11,7 +11,7 @@ const Error404 = () => {
 	const data = useData('random', 'error');
 
 	useEffect(() => {
-		// navigate('/error404');
+		navigate('/error404');
 	}, []);
 
 	return (
