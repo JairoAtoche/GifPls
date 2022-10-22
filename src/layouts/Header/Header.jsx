@@ -11,9 +11,11 @@ import '@/styles/theme.scss';
 
 const Header = () => {
 	const [close, setClose] = useState(false);
+
 	const handleVisible = () => {
-		close ? setClose(false) : setClose(true);
+		setClose(!close);
 	};
+
 	// Cierra el el side menu cuando cambie la url
 	const ref = useHref();
 	useEffect(() => {

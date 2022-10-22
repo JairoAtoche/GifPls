@@ -22,7 +22,7 @@ const MenuSide = ({ visible }) => {
 	return (
 		<ul className={`nav__ul ${visible} theme--bg-${theme}`}>
 			<AnimatePresence>
-				{!visible && (
+				{!visible ? (
 					<>
 						<MotionMenuItem
 							initial={initial}
@@ -30,7 +30,7 @@ const MenuSide = ({ visible }) => {
 							transition={{ ease: 'easeOut', duration: 0.3, delay }}
 							to={GIF}
 							name='GIF'>
-							<AiOutlineFileGif />
+							<AiOutlineFileGif className='icon-item' />
 						</MotionMenuItem>
 						<MotionMenuItem
 							to={STICKER}
@@ -38,7 +38,7 @@ const MenuSide = ({ visible }) => {
 							initial={initial}
 							animate={animate}
 							transition={{ ease: 'easeOut', duration: 0.3, delay: delay * 2 }}>
-							<BiSticker />
+							<BiSticker className='icon-item' />
 						</MotionMenuItem>
 						<MotionMenuItem
 							to={FAVORITOS}
@@ -46,13 +46,26 @@ const MenuSide = ({ visible }) => {
 							initial={initial}
 							animate={animate}
 							transition={{ ease: 'easeOut', duration: 0.3, delay: delay * 3 }}>
-							<AiFillHeart />
+							<AiFillHeart className='icon-item' />
 						</MotionMenuItem>
 						<MotionThemeButton
 							initial={initial}
 							animate={animate}
 							transition={{ ease: 'easeOut', duration: 0.3, delay: delay * 4 }}
 						/>
+					</>
+				) : (
+					<>
+						<MenuItem to={GIF} name='GIF'>
+							<AiOutlineFileGif className='icon-item' />
+						</MenuItem>
+						<MenuItem to={STICKER} name='STICKERS'>
+							<BiSticker className='icon-item' />
+						</MenuItem>
+						<MenuItem to={FAVORITOS} name='MIS FAVORITOS'>
+							<AiFillHeart className='icon-item' />
+						</MenuItem>
+						<ThemeButton />
 					</>
 				)}
 			</AnimatePresence>

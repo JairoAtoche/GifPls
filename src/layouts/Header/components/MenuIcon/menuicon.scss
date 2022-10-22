@@ -1,3 +1,4 @@
+@import '@/styles/mixins';
 .icon {
   width: 30px;
   height: 25px;
@@ -9,6 +10,10 @@
     &:nth-child(2) {
       margin: 5px auto;
     }
+  }
+
+  @include desktop {
+    display: none;    
   }
 }
 

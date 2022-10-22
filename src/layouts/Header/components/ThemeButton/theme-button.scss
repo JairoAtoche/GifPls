@@ -1,4 +1,4 @@
-
+@import '@/styles/mixins';
 .switch {
   margin-top: 30px;
   width: 110px;
@@ -12,6 +12,12 @@
   font-weight: bold;
   text-transform: uppercase;
   align-items: center;
+  @include desktop {
+    margin-top: 0;
+    font-size: 25px;
+    width: 100px;
+    height: 25px;
+  }
 }
 .switch-dark {
   flex-direction: row-reverse;
@@ -42,6 +48,10 @@
     background-color: var(--dark-blue);
     color: var(--gray);
   }
+  @include desktop {
+    width: 35px;
+    height: 35px;
+  }
 }
 .text {
   width: 100%;
@@ -53,5 +63,8 @@
   &-dark {
     text-align: start;
     padding-left: 15px;
+  }
+  @include desktop {
+    font-size: 16px;
   }
 }

@@ -11,7 +11,7 @@
 
 // Permite realizar el responsive
 @mixin desktop {
-	@media screen and (min-width: variables.$medium) {
+	@media screen and (min-width: 768px) {
 			@content
 	}
 }

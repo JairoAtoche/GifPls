@@ -1,3 +1,5 @@
+@import '@/styles/mixins';
+
 .nav__ul {
   width: 100%;
   min-height: calc(100vh - 45px);
@@ -9,9 +11,29 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  
+  @include desktop {
+    flex-direction: row;
+    min-height: 40px;
+    height: 40px;
+    margin-top: 0;
+    width: auto;
+    margin-right: 30px;
+  }
+  
+}
+
+.icon-item {
+  @include desktop {
+    display: none;
+  }
 }
 
 .cerrar {
   right: -100%;
   opacity: 0;
+  @include desktop {
+    right: 0;
+    opacity: 1;
+  }
 }
