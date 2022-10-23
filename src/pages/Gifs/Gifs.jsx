@@ -4,6 +4,7 @@ import Searcher from '@/components/Searcher/Searcher';
 import Section from '@/components/Section/Section';
 import SkeletonDefault from '@/components/SkeletonDefault/SkeletonDefault';
 import useData from '@/hooks/useData';
+import { useRandom } from '@/hooks/useRandom';
 import { v4 as uuidv4 } from 'uuid';
 import { SearcherContext } from '@/context/SearcherContext';
 import { getData } from '@/services/getData';
@@ -17,7 +18,7 @@ const MotionTrending = motion(Trending);
 
 const Gifs = () => {
 	const [search, setSearch] = useState([]);
-	const gif = useData('random', 'escribir');
+	const gif = useRandom('gifs', 'teclear');
 	const trends = useData('trending');
 	const location = useLocation();
 	const [page, setPage] = useState(initialPage);
@@ -54,7 +55,7 @@ const Gifs = () => {
 		});
 	}, [searcher, page]);
 	return (
-		<main>
+		<>
 			<section className='section-intro'>
 				<motion.h1
 					initial={{ opacity: 0, translateY: -10 }}
@@ -107,7 +108,7 @@ const Gifs = () => {
 					))}
 				</div>
 			</Section>
-		</main>
+		</>
 	);
 };
 

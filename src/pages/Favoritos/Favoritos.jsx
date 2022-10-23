@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import './favoritos.scss';
 
 const Favoritos = () => {
-	let favoritos = JSON.parse(localStorage.getItem('favoritos') || '[]');
+	let favoritos = JSON.parse(localStorage.getItem('favoritos'));
 	const id = favoritos.join(',');
 	const [lista, setLista] = useState([]);
 	const [state, setState] = useState(false);
@@ -22,7 +22,7 @@ const Favoritos = () => {
 	};
 
 	return (
-		<main>
+		<div className='favorito'>
 			<motion.h1
 				initial={{ opacity: 0, translateY: -50 }}
 				animate={{ opacity: 1, translateY: 0 }}
@@ -30,7 +30,7 @@ const Favoritos = () => {
 				GifPls
 			</motion.h1>
 			<Section subtitle='Lista de favoritos'>
-				<div className='favorite-container'>
+				<div className='favorito-container'>
 					{!lista ? (
 						<p>La lista se encuentra vacia 😢</p>
 					) : (
@@ -45,7 +45,7 @@ const Favoritos = () => {
 					)}
 				</div>
 			</Section>
-		</main>
+		</div>
 	);
 };
 

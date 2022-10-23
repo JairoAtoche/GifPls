@@ -52,7 +52,7 @@ const Stickers = () => {
 		});
 	}, [searcher, page]);
 	return (
-		<main>
+		<>
 			<section className='section-intro'>
 				<motion.h1
 					initial={{ opacity: 0, translateY: -10 }}
@@ -105,7 +105,7 @@ const Stickers = () => {
 					))}
 				</div>
 			</Section>
-		</main>
+		</>
 	);
 };
 export default Stickers;

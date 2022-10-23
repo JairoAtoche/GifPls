@@ -7,7 +7,7 @@ import { SearcherContext } from '@/context/SearcherContext';
 import { useNavigate } from 'react-router-dom';
 import Autocomplete from '@/components/Autocomplete/Autocomplete';
 import { motion } from 'framer-motion';
-import { getSearch } from '@/services/getSearch';
+import { getSearchSuggestion } from '@/services/getSearchSuggestion';
 
 const initialState = [];
 
@@ -22,7 +22,7 @@ const Searcher = () => {
 	const [suggestion, setSuggestion] = useState(initialState);
 
 	useEffect(() => {
-		getSearch(form).then(item => setSuggestion(item));
+		getSearchSuggestion(form).then(item => setSuggestion(item));
 	}, [form]);
 
 	const handleChange = e => {

@@ -5,7 +5,7 @@ const useData = (type, name, togle) => {
 	const [data, setData] = useState([]);
 
 	useEffect(() => {
-		getData({ typeEndpoint: type, word: name, types: togle }).then(data =>
+		getData({ typeEndpoint: type, word: name, format: togle }).then(data =>
 			setData(data)
 		);
 	}, []);
