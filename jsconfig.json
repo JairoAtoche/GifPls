@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+      "allowJs": true,
+      "baseUrl": "./",
+      "paths": {
+        "@/public/*": ["public/*"],
+        "@/assets/*": ["src/assets/*"],
+        "@/components/*": ["src/components/*"],
+        "@/router/*": ["src/config/router/*"],
+        "@/context/*": ["src/context/*"],
+        "@/hooks": ["src/hooks/*"],
+        "@/layouts/*": ["src/layouts/*"],
+        "@/pages/*": ["src/pages/*"],
+        "@/services/*": ["src/services/*"],
+        "@/styles/*": ["src/styles/*"]
+      }
+  }
+}
