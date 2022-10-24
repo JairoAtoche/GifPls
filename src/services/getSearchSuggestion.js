@@ -1,9 +1,9 @@
 import { URL, API_KEY } from '@/services/config';
 
 /**
- * Función que retorna una lista de nombres sugeridos basados en el parámetro query.
+ * Función que devuelve una lista de nombres sugeridos basados en el parámetro query.
  * @param {string} query - palabra o frase a buscar
- * @returns {Array} Arreglo que contiene las palabras o frases sugeridas
+ * @returns {string[]} Arreglo que contiene las palabras o frases sugeridas
  */
 export const getSearchSuggestion = async query => {
 	const endpoint = `${URL}/gifs/search/tags?api_key=${API_KEY}&q=${query}`;
