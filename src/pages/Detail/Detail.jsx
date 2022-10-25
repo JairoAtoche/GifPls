@@ -1,12 +1,14 @@
 /* eslint-disable no-irregular-whitespace */
 import React, { useEffect, useState } from 'react';
-import { getId } from '@/services/getId';
+import { getSearchById } from '@/services/getSearchById';
 import { useParams } from 'react-router-dom';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
 import Button from './components/Button';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 import { FiDownload } from 'react-icons/fi';
 import './detail.scss';
 import { saveAs } from 'file-saver';
+
 const Detail = () => {
 	const { id } = useParams();
 	const [detail, setDetail] = useState([]);
@@ -19,24 +21,24 @@ const Detail = () => {
 	const DOWNLOAD = image.substring(0, image.length - 9);
 
 	useEffect(() => {
-		getId(id).then(item => setDetail(item));
+		getSearchById(id).then(item => setDetail(item));
 	}, [id]);
 
 	const download = () => {
 		saveAs('image_url', `${DOWNLOAD}.gif`);
 	};
 
-	const [fav, setFav] = useState(false);
-	let favoritos = JSON.parse(localStorage.getItem('favoritos') || '[]');
+	const [refresh, setRefresh] = useState(false);
+	let [favoritos, setValue] = useLocalStorage('favoritos', []);
 	const handleStorage = () => {
 		favoritos = JSON.parse(localStorage.getItem('favoritos') || '[]');
 		if (!favoritos.includes(id)) {
-			favoritos.push(id);
+			setValue([...favoritos, id]);
 		} else {
-			favoritos = favoritos.filter(item => item !== id);
+			const updateFavorites = favoritos.filter(item => item !== id);
+			setValue(updateFavorites);
 		}
-		setFav(!fav);
-		localStorage.setItem('favoritos', JSON.stringify(favoritos));
+		setRefresh(!refresh);
 	};
 
 	return (

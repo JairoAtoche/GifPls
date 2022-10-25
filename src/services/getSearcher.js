@@ -2,10 +2,10 @@ import { URL, API_KEY } from '@/services/config';
 
 const limit = 15;
 /**
- * Función
+ * Función que devuelve un arreglo de objetos con los resultados del gif/sticker basado en la query.
  * @param {'gifs' | 'stickers'} format - tipo de formato de la imagen, solo elegir 'gifs' o 'stickers'
- * @param {string} query -
- * @param {number} page -
+ * @param {string} query - nombre o frase a buscar
+ * @param {number} page - paginación de búsqueda.
  * @returns {[{id: string, title: string, image: string}]} Arreglo de objetos que contiene id, title and image de la imagen (gif o sticker)
  */
 export const getSearcher = async (format, query, page = 0) => {

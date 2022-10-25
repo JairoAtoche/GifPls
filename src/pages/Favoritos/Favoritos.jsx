@@ -1,24 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Section from '@/components/Section/Section';
 import FavoriteItem from '@/components/FavoriteItem/FavoriteItem';
-import { getFavorites } from '@/services/getFavorites';
+import { useFavorites } from '@/hooks/useFavorites';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
 import { motion } from 'framer-motion';
 import './favoritos.scss';
 
 const Favoritos = () => {
-	let favoritos = JSON.parse(localStorage.getItem('favoritos'));
-	const id = favoritos.join(',');
-	const [lista, setLista] = useState([]);
-	const [state, setState] = useState(false);
+	const [listFavorites, setListFavorites] = useLocalStorage('favoritos', []);
+	const id = listFavorites.join(',');
 
-	useEffect(() => {
-		getFavorites(id).then(item => setLista(item));
-	}, [state]);
+	const [favorites, refreshFavorites] = useFavorites(id);
 
 	const deleteFavorite = id => {
-		favoritos = favoritos.filter(item => item !== id);
-		localStorage.setItem('favoritos', JSON.stringify(favoritos));
-		setState(!state);
+		const updateFavoritos = listFavorites.filter(item => item !== id);
+		setListFavorites(updateFavoritos);
+		refreshFavorites();
 	};
 
 	return (
@@ -31,10 +28,10 @@ const Favoritos = () => {
 			</motion.h1>
 			<Section subtitle='Lista de favoritos'>
 				<div className='favorito-container'>
-					{!lista ? (
+					{!favorites ? (
 						<p>La lista se encuentra vacia 😢</p>
 					) : (
-						lista.map(item => (
+						favorites.map(item => (
 							<FavoriteItem
 								key={item.id}
 								title={item.title}

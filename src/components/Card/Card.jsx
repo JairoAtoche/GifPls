@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { DETAIL } from '@/router/path';
 import { Link } from 'react-router-dom';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 import { BsLink45Deg } from 'react-icons/bs';
 import Swal from 'sweetalert2';
@@ -9,7 +10,7 @@ import 'animate.css';
 import './card.scss';
 
 const Card = ({ id, title, img }) => {
-	const [fav, setFav] = useState(false);
+	const [refresh, setRefresh] = useState(false);
 	const filtro = title.includes(' GIF by ') ? ' GIF by ' : ' Sticker by ';
 	const indiceAutor = title.indexOf(filtro);
 	const titulo = title.substring(0, indiceAutor);
@@ -42,17 +43,18 @@ const Card = ({ id, title, img }) => {
 		});
 	};
 
-	let favoritos = JSON.parse(localStorage.getItem('favoritos') || '[]');
+	let [favoritos, setValue] = useLocalStorage('favoritos', []);
 
 	const handleStorage = () => {
-		favoritos = JSON.parse(localStorage.getItem('favoritos') || '[]');
+		favoritos = JSON.parse(localStorage.getItem('favoritos'));
+
 		if (!favoritos.includes(id)) {
-			favoritos.push(id);
+			setValue([...favoritos, id]);
 		} else {
-			favoritos = favoritos.filter(item => item !== id);
+			const updateFavorites = favoritos.filter(item => item !== id);
+			setValue(updateFavorites);
 		}
-		setFav(!fav);
-		localStorage.setItem('favoritos', JSON.stringify(favoritos));
+		setRefresh(!refresh);
 	};
 
 	return (

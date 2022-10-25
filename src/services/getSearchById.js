@@ -5,7 +5,7 @@ import { URL, API_KEY } from '@/services/config';
  * @param {[string]} id - identificador del gif
  * @returns {{title: string, image: string}} Objeto que contiene el title and image del gif
  */
-export const getId = async id => {
+export const getSearchById = async id => {
 	const endpoint = `${URL}/gifs/${id}?api_key=${API_KEY}`;
 	try {
 		const response = await fetch(endpoint);
