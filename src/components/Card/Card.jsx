@@ -46,7 +46,7 @@ const Card = ({ id, title, img }) => {
 	let [favoritos, setValue] = useLocalStorage('favoritos', []);
 
 	const handleStorage = () => {
-		favoritos = JSON.parse(localStorage.getItem('favoritos'));
+		favoritos = JSON.parse(localStorage.getItem('favoritos') || '[]');
 
 		if (!favoritos.includes(id)) {
 			setValue([...favoritos, id]);
