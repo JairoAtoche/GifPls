@@ -152,10 +152,10 @@ Stack de tecnologías base para construir el sitio web.
 
 ## 📄 Documentación <a name="documentación"></a>
 
-- <a href="https://jsdoc.app/" target="_blank" rel="noreferrer"> JSDoc </a> - para generar la documentación de las funciones y custom hook.<br>
-
-  [📄 **Sitio web de la documentación**]()
-
 - <a href="https://storybook.js.org/" target="_blank" rel="noreferrer"> <img src="https://avatars.githubusercontent.com/u/22632046?s=200&v=4" alt="Storybook" width="25" height="25"/> Storybook </a> - para documentar los componentes.<br>
 
   [📄 **Sitio web de la documentación**]()
+
+- <a href="https://jsdoc.app/" target="_blank" rel="noreferrer"> JSDoc </a> - para generar la documentación de las funciones y custom hook.<br>
+
+  [📄 **Sitio web de la documentación**](https://jairoatoche.github.io/GifPls/)
