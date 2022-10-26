@@ -1,12 +1,11 @@
+@import '@/styles/mixins';
+
 .favorite {
   height: 100px;
   overflow: hidden;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  @include caja-flex(row,space-around,center,10px);
   margin-bottom: 10px;
   width: 80%;
-  gap: 10px;
   border-bottom: 1px solid gray;
   &:last-child {
     border-bottom: none;

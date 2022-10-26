@@ -3,7 +3,6 @@ import './gifs.scss';
 import Searcher from '@/components/Searcher/Searcher';
 import Section from '@/components/Section/Section';
 import SkeletonDefault from '@/components/SkeletonDefault/SkeletonDefault';
-import useData from '@/hooks/useData';
 import { useRandom } from '@/hooks/useRandom';
 import { v4 as uuidv4 } from 'uuid';
 import { SearcherContext } from '@/context/SearcherContext';
@@ -12,14 +11,15 @@ import Card from '@/components/Card/Card';
 import { useLocation } from 'react-router-dom';
 import Trending from '@/components/Trending/Trending';
 import { motion, useInView } from 'framer-motion';
+import { useTrends } from '@/hooks/useTrends';
 
 const initialPage = 0;
 const MotionTrending = motion(Trending);
 
 const Gifs = () => {
 	const [search, setSearch] = useState([]);
-	const gif = useRandom('gifs', 'teclear');
-	const trends = useData('trending');
+	const [gif] = useRandom('gifs', 'teclear');
+	const trends = useTrends();
 	const location = useLocation();
 	const [page, setPage] = useState(initialPage);
 	const [loadingNextPage, setLoadingNextPage] = useState(false);

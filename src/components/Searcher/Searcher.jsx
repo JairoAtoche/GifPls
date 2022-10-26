@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import './searcher.scss';
 import { ThemeContext } from '@/context/ThemeContext';
 import '@/styles/theme.scss';
@@ -7,23 +7,16 @@ import { SearcherContext } from '@/context/SearcherContext';
 import { useNavigate } from 'react-router-dom';
 import Autocomplete from '@/components/Autocomplete/Autocomplete';
 import { motion } from 'framer-motion';
-import { getSearchSuggestion } from '@/services/getSearchSuggestion';
-
-const initialState = [];
+import { useSearchSuggestion } from '@/hooks/useSearchSuggestion';
 
 const Searcher = () => {
 	const { theme } = useContext(ThemeContext);
 
 	const [form, setForm] = useState('');
-
 	const navigate = useNavigate();
 
 	const { setSearcher } = useContext(SearcherContext);
-	const [suggestion, setSuggestion] = useState(initialState);
-
-	useEffect(() => {
-		getSearchSuggestion(form).then(item => setSuggestion(item));
-	}, [form]);
+	const suggestion = useSearchSuggestion(form);
 
 	const handleChange = e => {
 		setForm(e.target.value);

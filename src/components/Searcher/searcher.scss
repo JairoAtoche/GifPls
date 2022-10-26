@@ -1,11 +1,11 @@
+@import '@/styles/mixins';
+
 .diva {
   background: linear-gradient(21deg, red,orange,yellow,green,blue,purple);
   width: 303px;
   border-radius: 10px;
   height: 33px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	@include caja-flex(row,center,center);
 }
 .searcher {
   &-input {
@@ -24,9 +24,7 @@
   
   }
   &-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include caja-flex(row,center,center);
     width: 90px;
     height: 30px;
     border-radius: 0 10px 10px 0;

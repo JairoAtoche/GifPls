@@ -13,7 +13,7 @@ export const useSearchById = id => {
 
 	useEffect(() => {
 		getSearchById(id).then(gif => setGif(gif));
-	}, []);
+	}, [id]);
 
 	return gif;
 };

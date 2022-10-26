@@ -1,6 +1,5 @@
 /* eslint-disable no-irregular-whitespace */
-import React, { useEffect, useState } from 'react';
-import { getSearchById } from '@/services/getSearchById';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 import Button from './components/Button';
@@ -8,21 +7,17 @@ import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 import { FiDownload } from 'react-icons/fi';
 import './detail.scss';
 import { saveAs } from 'file-saver';
+import { useSearchById } from '@/hooks/useSearchById';
 
 const Detail = () => {
 	const { id } = useParams();
-	const [detail, setDetail] = useState([]);
-	const { title = '', image = '' } = detail;
+	const { title = '', image = '' } = useSearchById(id);
 
 	const filtro = title.includes(' GIF by ') ? ' GIF by ' : ' Sticker by ';
 	const indiceAutor = title.indexOf(filtro);
 	const titulo = title.substring(0, indiceAutor) || 'Detalle del GIF';
 	const autor = title.substring(indiceAutor + filtro.length);
 	const DOWNLOAD = image.substring(0, image.length - 9);
-
-	useEffect(() => {
-		getSearchById(id).then(item => setDetail(item));
-	}, [id]);
 
 	const download = () => {
 		saveAs('image_url', `${DOWNLOAD}.gif`);

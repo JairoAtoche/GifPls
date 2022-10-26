@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getTrends } from '@/services/getTrends';
 
-const initialState = {};
+const initialState = [];
 
 /**
  * Custom hook que devuelve un arreglo con los términos de búsqueda de la tendencia del día.

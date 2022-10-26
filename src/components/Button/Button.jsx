@@ -1,25 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { getData } from '@/services/getData';
 import './button.scss';
 import { DETAIL } from '@/router/path';
+import { useRandom } from '@/hooks/useRandom';
 
 const Button = ({ name, children }) => {
-	const [id, setId] = useState('');
-	const [state, setState] = useState(true);
-
-	useEffect(() => {
-		getData({ typeEndpoint: 'random', format: 'gifs' }).then(id =>
-			setId(id.id)
-		);
-	}, [state]);
+	const value = Math.round(Math.random());
+	const [{ id }, setRefresh] = useRandom(value === 1 ? 'gifs' : 'stickers');
 
 	return (
-		<Link
-			to={`${DETAIL}/${id}`}
-			className='button'
-			onClick={() => setState(!state)}>
+		<Link to={`${DETAIL}/${id}`} className='button' onClick={setRefresh}>
 			{children}
 			{name}
 		</Link>

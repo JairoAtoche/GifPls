@@ -1,3 +1,5 @@
+@import '@/styles/mixins';
+
 .btn__detail {
   width: 300px;
   height: 40px;
@@ -6,12 +8,11 @@
   color: var(--white);
   font-size: 14px;
   font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include caja-flex(row,center,center);
   cursor: pointer;
   transition: all .5s ease;
   margin-bottom: 10px;
+  border: none;
 
   &:hover {
     opacity: 85%;

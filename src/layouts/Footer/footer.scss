@@ -1,8 +1,7 @@
+@import '@/styles/mixins';
+
 footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include caja-flex(column,center,center);
   padding: 0 20px;
 }
 .footer__network {
@@ -14,8 +13,8 @@ footer {
 }
 .footer__container {
   width: 80%;
-  display: flex;
-  justify-content: space-between;
+  @include caja-flex(row,space-between,stretch);
+
 }
 
 .footer__empresa {
@@ -27,9 +26,7 @@ footer {
 }
 .explora {
   flex-basis: 35%;
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
+  @include caja-flex(column,flex-start,stretch,7px);
 }
 
 .footer__copy {

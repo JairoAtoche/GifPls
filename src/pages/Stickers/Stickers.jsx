@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState, useRef } from 'react';
 import Searcher from '@/components/Searcher/Searcher';
 import Section from '@/components/Section/Section';
 import SkeletonDefault from '@/components/SkeletonDefault/SkeletonDefault';
-import useData from '@/hooks/useData';
 import { v4 as uuidv4 } from 'uuid';
 import { SearcherContext } from '@/context/SearcherContext';
 import { getData } from '@/services/getData';
@@ -10,14 +9,16 @@ import Card from '@/components/Card/Card';
 import { useLocation } from 'react-router-dom';
 import Trending from '@/components/Trending/Trending';
 import { motion, useInView } from 'framer-motion';
+import { useTrends } from '@/hooks/useTrends';
+import { useRandom } from '@/hooks/useRandom';
 
 const initialPage = 0;
 const MotionTrending = motion(Trending);
 
 const Stickers = () => {
 	const [search, setSearch] = useState([]);
-	const gif = useData('random', 'escribir');
-	const trends = useData('trending');
+	const [gif] = useRandom('stickers', 'teclear');
+	const trends = useTrends();
 	const location = useLocation();
 	const [page, setPage] = useState(initialPage);
 	const [loadingNextPage, setLoadingNextPage] = useState(false);

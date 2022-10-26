@@ -8,7 +8,7 @@ import { AiFillHome } from 'react-icons/ai';
 import './error404.scss';
 
 const Error404 = () => {
-	const { image, title } = useRandom('gifs', 'error404');
+	const [{ image, title }] = useRandom('gifs', 'error404');
 	useRedirect('/error404');
 
 	return (

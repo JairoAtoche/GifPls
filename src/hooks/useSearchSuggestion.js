@@ -13,6 +13,6 @@ export const useSearchSuggestion = query => {
 
 	useEffect(() => {
 		getSearchSuggestion(query).then(names => setNamesList(names));
-	}, []);
+	}, [query]);
 	return namesList;
 };

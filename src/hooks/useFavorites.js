@@ -6,7 +6,7 @@ const initialState = [];
 /**
  * Custom hook que devuelve un arreglo con una lista de objetos con información (id, title, image) de cada gif/sticker favorito.
  * @param {string} ids - conjunto de id's a recuperar
- * @returns {[{id: string, title: string, image: string}]} Arreglo que contiene una lista de objetos (id,title,image).
+ * @returns {[[{id: string, title: string, image: string}],refreshFavorites]} Arreglo que contiene un un arreglo con lista de objetos (id,title,image) y una función para actualizar el estado.
  */
 export const useFavorites = ids => {
 	const [favorites, setFavorites] = useState(initialState);

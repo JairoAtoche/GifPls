@@ -1,18 +1,14 @@
+@import '@/styles/mixins';
+
 .error {
   min-height: calc(100vh - 150px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  @include caja-flex(column,center,center);
+
   &__btn {
     background-color: var(--purple);
     color: var(--white);
     text-decoration: none;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+    @include caja-flex(row,center,center,10px);
     height: 30px;
     width: 250px;
     border-radius: 10px;

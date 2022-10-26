@@ -9,16 +9,10 @@
   height: 45px;
   padding: 0 30px;
   width: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  
+  @include caja-flex(row,space-between,center);   
 }
 .header__content {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+  @include caja-flex(row,flex-start,center,20px);  
   @include desktop {
     margin-right: 450px;
   }

@@ -1,12 +1,8 @@
 @import '@/styles/mixins';
 
 .skeleton-default {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include caja-flex(column,center,center, 20px 30px);
   text-align: center;
-  gap: 20px 30px;
   padding: 20px;
   &__h4 {
     font-size: 16px;
