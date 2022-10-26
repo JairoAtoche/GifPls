@@ -1,3 +1,8 @@
+/**
+ * My custom hooks library
+ * @module CustomHooks
+ */
+
 import { useState, useEffect } from 'react';
 import { getFavorites } from '@/services/getFavorites';
 

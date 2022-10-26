@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>hooks/useRandom.js - Documentation</title>
+    <title>hooks/useSearchSuggestion.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">hooks/useRandom.js</h1>
+    <h1 class="page-title">hooks/useSearchSuggestion.js</h1>
     
 
     
@@ -48,28 +48,22 @@
  */
 
 import { useState, useEffect } from 'react';
-import { getRandom } from '@/services/getRandom';
+import { getSearchSuggestion } from '@/services/getSearchSuggestion';
 
-const initialState = {};
+const initialState = [];
 
 /**
- * Custom hook que devuelve un objeto con la información aleatorio (id, title and image) de un gif o sticker dependiendo del format(gifs o stickers) y query.
- * @param {'gifs' | 'stickers'} format - tipo de formato de la imagen, solo elegir 'gifs' o 'stickers'
- * @param {string} query - palabra o frase para buscar la imagen aleatoria.
- * @returns {[{id: string, title: string, image: string}, function():boolean]} Arreglo que contiene un objeto con propiedades id, title and image de la imagen (gif o sticker) y una función para refrescar el customHook.
+ * Custom hook que devuelve una lista de nombres sugeridos basados en el parámetro query.
+ * @param {string} query - palabra o frase a buscar
+ * @returns {string[]} Arreglo que contiene las palabras o frases sugeridas
  */
-export const useRandom = (format, query = '') => {
-	const [item, setItem] = useState(initialState);
-	const [refresh, setRefresh] = useState(false);
+export const useSearchSuggestion = query => {
+	const [namesList, setNamesList] = useState(initialState);
 
 	useEffect(() => {
-		getRandom(format, query).then(item => setItem(item));
-	}, [refresh]);
-
-	const refreshRandom = () => {
-		setRefresh(!refresh);
-	};
-	return [item, refreshRandom];
+		getSearchSuggestion(query).then(names => setNamesList(names));
+	}, [query]);
+	return namesList;
 };
 </code></pre>
         </article>

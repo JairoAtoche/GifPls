@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>hooks/useRandom.js - Documentation</title>
+    <title>hooks/useRedirect.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">hooks/useRandom.js</h1>
+    <h1 class="page-title">hooks/useRedirect.js</h1>
     
 
     
@@ -47,29 +47,18 @@
  * @module CustomHooks
  */
 
-import { useState, useEffect } from 'react';
-import { getRandom } from '@/services/getRandom';
-
-const initialState = {};
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 /**
- * Custom hook que devuelve un objeto con la información aleatorio (id, title and image) de un gif o sticker dependiendo del format(gifs o stickers) y query.
- * @param {'gifs' | 'stickers'} format - tipo de formato de la imagen, solo elegir 'gifs' o 'stickers'
- * @param {string} query - palabra o frase para buscar la imagen aleatoria.
- * @returns {[{id: string, title: string, image: string}, function():boolean]} Arreglo que contiene un objeto con propiedades id, title and image de la imagen (gif o sticker) y una función para refrescar el customHook.
+ * Función que altera la URL con el parámetro path.
+ * @param {string} path - nombre de la dirección
  */
-export const useRandom = (format, query = '') => {
-	const [item, setItem] = useState(initialState);
-	const [refresh, setRefresh] = useState(false);
-
+export const useRedirect = path => {
+	const navigate = useNavigate();
 	useEffect(() => {
-		getRandom(format, query).then(item => setItem(item));
-	}, [refresh]);
-
-	const refreshRandom = () => {
-		setRefresh(!refresh);
-	};
-	return [item, refreshRandom];
+		navigate(path);
+	}, []);
 };
 </code></pre>
         </article>

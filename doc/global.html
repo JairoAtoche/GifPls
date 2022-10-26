@@ -1,23 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="utf-8">
-    <title>JSDoc: Global</title>
-
-    <script src="scripts/prettify/prettify.js"> </script>
-    <script src="scripts/prettify/lang-css.js"> </script>
+    <title>Global - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
 <body>
 
-<div id="main">
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
 
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-CustomHooks.html">CustomHooks</a></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul><h3>Global</h3><ul><li><a href="global.html#getFavorites">getFavorites</a></li><li><a href="global.html#getRandom">getRandom</a></li><li><a href="global.html#getSearchById">getSearchById</a></li><li><a href="global.html#getSearcher">getSearcher</a></li><li><a href="global.html#getSearchSuggestion">getSearchSuggestion</a></li><li><a href="global.html#getTrends">getTrends</a></li></ul>
+</nav>
+
+<div id="main">
+    
     <h1 class="page-title">Global</h1>
+    
 
     
 
@@ -28,18 +44,18 @@
 
 <header>
     
-        <h2></h2>
+        <h2>
+        
+        </h2>
         
     
 </header>
 
 <article>
-    <div class="container-overview">
     
+        <div class="container-overview">
         
-
-        
-
+            
 
 <dl class="details">
 
@@ -77,10 +93,13 @@
 </dl>
 
 
+
+
+            
+
+            
         
-    
-    </div>
-
+        </div>
     
 
     
@@ -88,8 +107,10 @@
     
 
     
-
     
+    
+
+     
 
     
 
@@ -103,41 +124,8 @@
 
 
 
-<div class="description">
-    Función que retorna un arreglo que contiene una lista de objetos con información (id, title, image) de cada gif/sticker favorito.
-</div>
-
-
-
-
-
-
 
 <dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
 
     
     <dt class="tag-source">Source:</dt>
@@ -151,69 +139,41 @@
     
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </dl>
 
 
 
 
 
-
-        
-            
-<h4 class="name" id="getId"><span class="type-signature">(constant) </span>getId<span class="type-signature"></span></h4>
-
-
-
-
-<div class="description">
-    Función que devuelve un objeto con la información del gif (title and image) basado en el parámetro id.
+<div class="description usertext">
+    Función que retorna un arreglo que contiene una lista de objetos con información (id, title, image) de cada gif/sticker favorito.
 </div>
 
 
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="services_getId.js.html">services/getId.js</a>, <a href="services_getId.js.html#line8">line 8</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
 
 
 
@@ -227,41 +187,8 @@
 
 
 
-<div class="description">
-    Función que devuelve un objeto con la información aleatorio (id, title and image) de un gif o sticker dependiendo del format(gifs o stickers) y query.
-</div>
-
-
-
-
-
-
 
 <dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
 
     
     <dt class="tag-source">Source:</dt>
@@ -275,7 +202,104 @@
     
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </dl>
+
+
+
+
+
+<div class="description usertext">
+    Función que devuelve un objeto con la información aleatorio (id, title and image) de un gif o sticker dependiendo del format(gifs o stickers) y query.
+</div>
+
+
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="getSearchById"><span class="type-signature">(constant) </span>getSearchById<span class="type-signature"></span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="services_getSearchById.js.html">services/getSearchById.js</a>, <a href="services_getSearchById.js.html#line8">line 8</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    Función que devuelve un objeto con la información del gif (title and image) basado en el parámetro id.
+</div>
+
+
 
 
 
@@ -289,41 +313,8 @@
 
 
 
-<div class="description">
-    Función
-</div>
-
-
-
-
-
-
 
 <dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
 
     
     <dt class="tag-source">Source:</dt>
@@ -337,7 +328,41 @@
     
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </dl>
+
+
+
+
+
+<div class="description usertext">
+    Función que devuelve un arreglo de objetos con los resultados del gif/sticker basado en la query.
+</div>
+
+
 
 
 
@@ -351,41 +376,8 @@
 
 
 
-<div class="description">
-    Función que devuelve una lista de nombres sugeridos basados en el parámetro query.
-</div>
-
-
-
-
-
-
 
 <dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
 
     
     <dt class="tag-source">Source:</dt>
@@ -399,7 +391,41 @@
     
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </dl>
+
+
+
+
+
+<div class="description usertext">
+    Función que devuelve una lista de nombres sugeridos basados en el parámetro query.
+</div>
+
+
 
 
 
@@ -413,41 +439,8 @@
 
 
 
-<div class="description">
-    Función que devuelve una lista con los términos de búsqueda de tendencia más populares del día.
-</div>
-
-
-
-
-
-
 
 <dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
 
     
     <dt class="tag-source">Source:</dt>
@@ -461,69 +454,41 @@
     
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </dl>
 
 
 
 
 
-
-        
-            
-<h4 class="name" id="useRandom"><span class="type-signature">(constant) </span>useRandom<span class="type-signature"></span></h4>
-
-
-
-
-<div class="description">
-    Custom hook que retorna un objeto con la información aleatorio (id, title and image) de un gif o sticker dependiendo del format(gifs o stickers) y query.
+<div class="description usertext">
+    Función que devuelve una lista con los términos de búsqueda de tendencia más populares del día.
 </div>
 
 
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="hooks_useRandom.js.html">hooks/useRandom.js</a>, <a href="hooks_useRandom.js.html#line14">line 14</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
 
 
 
@@ -545,19 +510,21 @@
 
 
 
+    
+    
 </div>
-
-<nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#getFavorites">getFavorites</a></li><li><a href="global.html#getId">getId</a></li><li><a href="global.html#getRandom">getRandom</a></li><li><a href="global.html#getSearcher">getSearcher</a></li><li><a href="global.html#getSearchSuggestion">getSearchSuggestion</a></li><li><a href="global.html#getTrends">getTrends</a></li><li><a href="global.html#useRandom">useRandom</a></li></ul>
-</nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Sun Oct 23 2022 21:59:49 GMT-0500 (hora estándar de Perú)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a> on Tue Oct 25 2022 20:17:47 GMT-0500 (hora estándar de Perú) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
-<script> prettyPrint(); </script>
-<script src="scripts/linenumber.js"> </script>
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
 </body>
 </html>

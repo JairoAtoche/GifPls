@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>hooks/useRandom.js - Documentation</title>
+    <title>hooks/useLocalStorage.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">hooks/useRandom.js</h1>
+    <h1 class="page-title">hooks/useLocalStorage.js</h1>
     
 
     
@@ -47,29 +47,32 @@
  * @module CustomHooks
  */
 
-import { useState, useEffect } from 'react';
-import { getRandom } from '@/services/getRandom';
-
-const initialState = {};
+import { useState } from 'react';
 
 /**
- * Custom hook que devuelve un objeto con la información aleatorio (id, title and image) de un gif o sticker dependiendo del format(gifs o stickers) y query.
- * @param {'gifs' | 'stickers'} format - tipo de formato de la imagen, solo elegir 'gifs' o 'stickers'
- * @param {string} query - palabra o frase para buscar la imagen aleatoria.
- * @returns {[{id: string, title: string, image: string}, function():boolean]} Arreglo que contiene un objeto con propiedades id, title and image de la imagen (gif o sticker) y una función para refrescar el customHook.
+ * Custom hook que devuelve un arreglo el valor almacenado y una función para agregar un nuevo valor basado en los parámetros key e initialValue.
+ * @param {string} key - clave del localStorage
+ * @param {string} initialValue - valor inicial del localStorage
+ * @returns {[]} - Arreglo que contiene el valor almacenado y una función para agregar un nuevo valor
  */
-export const useRandom = (format, query = '') => {
-	const [item, setItem] = useState(initialState);
-	const [refresh, setRefresh] = useState(false);
-
-	useEffect(() => {
-		getRandom(format, query).then(item => setItem(item));
-	}, [refresh]);
-
-	const refreshRandom = () => {
-		setRefresh(!refresh);
+export const useLocalStorage = (key, initialValue) => {
+	const [storedValue, setStoredValue] = useState(() => {
+		try {
+			const item = localStorage.getItem(key);
+			return item ? JSON.parse(item) : initialValue;
+		} catch (err) {
+			return initialValue;
+		}
+	});
+	const setValue = value => {
+		try {
+			setStoredValue(value);
+			localStorage.setItem(key, JSON.stringify(value));
+		} catch (err) {
+			console.error(err);
+		}
 	};
-	return [item, refreshRandom];
+	return [storedValue, setValue];
 };
 </code></pre>
         </article>

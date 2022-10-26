@@ -1,3 +1,8 @@
+/**
+ * My custom hooks library
+ * @module CustomHooks
+ */
+
 import { useState, useEffect } from 'react';
 import { getRandom } from '@/services/getRandom';
 

@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>hooks/useRandom.js - Documentation</title>
+    <title>services/getSearchById.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">hooks/useRandom.js</h1>
+    <h1 class="page-title">services/getSearchById.js</h1>
     
 
     
@@ -42,34 +42,26 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * My custom hooks library
- * @module CustomHooks
- */
-
-import { useState, useEffect } from 'react';
-import { getRandom } from '@/services/getRandom';
-
-const initialState = {};
+            <pre class="prettyprint source linenums"><code>import { URL, API_KEY } from '@/services/config';
 
 /**
- * Custom hook que devuelve un objeto con la información aleatorio (id, title and image) de un gif o sticker dependiendo del format(gifs o stickers) y query.
- * @param {'gifs' | 'stickers'} format - tipo de formato de la imagen, solo elegir 'gifs' o 'stickers'
- * @param {string} query - palabra o frase para buscar la imagen aleatoria.
- * @returns {[{id: string, title: string, image: string}, function():boolean]} Arreglo que contiene un objeto con propiedades id, title and image de la imagen (gif o sticker) y una función para refrescar el customHook.
+ * Función que devuelve un objeto con la información del gif (title and image) basado en el parámetro id.
+ * @param {[string]} id - identificador del gif
+ * @returns {{title: string, image: string}} Objeto que contiene el title and image del gif
  */
-export const useRandom = (format, query = '') => {
-	const [item, setItem] = useState(initialState);
-	const [refresh, setRefresh] = useState(false);
-
-	useEffect(() => {
-		getRandom(format, query).then(item => setItem(item));
-	}, [refresh]);
-
-	const refreshRandom = () => {
-		setRefresh(!refresh);
-	};
-	return [item, refreshRandom];
+export const getSearchById = async id => {
+	const endpoint = `${URL}/gifs/${id}?api_key=${API_KEY}`;
+	try {
+		const response = await fetch(endpoint);
+		const { data } = await response.json();
+		const itemInfo = {
+			title: data.title,
+			image: data.images.downsized_large.url,
+		};
+		return itemInfo;
+	} catch (err) {
+		console.error(err);
+	}
 };
 </code></pre>
         </article>
