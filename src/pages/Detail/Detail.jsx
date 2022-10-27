@@ -5,6 +5,7 @@ import { useLocalStorage } from '@/hooks/useLocalStorage';
 import Button from './components/Button';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 import { FiDownload } from 'react-icons/fi';
+import { motion } from 'framer-motion';
 import './detail.scss';
 import { saveAs } from 'file-saver';
 import { useSearchById } from '@/hooks/useSearchById';
@@ -40,7 +41,7 @@ const Detail = () => {
 		<div className='detail'>
 			<h1 className='detail__h1'>{titulo}</h1>
 			<div className='img__container'>
-				<img src={image} alt={titulo} className='img' />
+				<motion.img src={image} alt={titulo} className='img' layoutId={id} />
 			</div>
 			<div className='detail__autor'>
 				<p>Autor: </p>

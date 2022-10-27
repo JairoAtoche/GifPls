@@ -15,6 +15,7 @@ import { useTrends } from '@/hooks/useTrends';
 
 const initialPage = 0;
 const MotionTrending = motion(Trending);
+const MotionCard = motion(Card);
 
 const Gifs = () => {
 	const [search, setSearch] = useState([]);
@@ -85,7 +86,13 @@ const Gifs = () => {
 					) : (
 						<div className='container-result'>
 							{search.map(el => (
-								<Card key={el.id} id={el.id} title={el.title} img={el.image} />
+								<MotionCard
+									key={el.id}
+									id={el.id}
+									title={el.title}
+									img={el.image}
+									layoutId={el.id}
+								/>
 							))}
 							<button onClick={handleNextPage} className='btn-nextPage'>
 								Cargar más

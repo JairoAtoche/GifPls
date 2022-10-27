@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
 import 'animate.css';
 import './card.scss';
 
-const Card = ({ id, title, img }) => {
+const Card = React.forwardRef(({ id, title, img }, ref) => {
 	const [refresh, setRefresh] = useState(false);
 	const filtro = title.includes(' GIF by ') ? ' GIF by ' : ' Sticker by ';
 	const indiceAutor = title.indexOf(filtro);
@@ -43,6 +43,8 @@ const Card = ({ id, title, img }) => {
 		});
 	};
 
+	Card.displayName = 'CardName';
+
 	let [favoritos, setValue] = useLocalStorage('favoritos', []);
 
 	const handleStorage = () => {
@@ -56,9 +58,8 @@ const Card = ({ id, title, img }) => {
 		}
 		setRefresh(!refresh);
 	};
-
 	return (
-		<div className='card'>
+		<div className='card' ref={ref}>
 			<button className='card__btn card__btn--url' onClick={copyURL}>
 				<BsLink45Deg />
 			</button>
@@ -71,12 +72,12 @@ const Card = ({ id, title, img }) => {
 			</Link>
 		</div>
 	);
-};
-
-export default Card;
+});
 
 Card.propTypes = {
 	id: PropTypes.string,
 	title: PropTypes.string,
 	img: PropTypes.string,
 };
+
+export default Card;
