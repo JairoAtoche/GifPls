@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
 import 'animate.css';
 import './card.scss';
 
-const Card = React.forwardRef(({ id, title, img }, ref) => {
+const Card = React.forwardRef(({ id, title, img, format = 'gif' }, ref) => {
 	const [refresh, setRefresh] = useState(false);
 	const filtro = title.includes(' GIF by ') ? ' GIF by ' : ' Sticker by ';
 	const indiceAutor = title.indexOf(filtro);
@@ -68,7 +68,12 @@ const Card = React.forwardRef(({ id, title, img }, ref) => {
 			</button>
 			<p className='card__title'>{titulo}</p>
 			<Link to={`${DETAIL}/${id}`} className='img-container'>
-				<img loading='lazy' src={img} alt={title} className='img' />
+				<img
+					loading='lazy'
+					src={img}
+					alt={title}
+					className={`img img-${format}`}
+				/>
 			</Link>
 		</div>
 	);
@@ -78,6 +83,7 @@ Card.propTypes = {
 	id: PropTypes.string,
 	title: PropTypes.string,
 	img: PropTypes.string,
+	format: PropTypes.string,
 };
 
 export default Card;

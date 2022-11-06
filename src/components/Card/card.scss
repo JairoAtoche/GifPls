@@ -51,4 +51,10 @@
   min-width: 150px;
   min-height: 150px;
   max-width: 450px;
+  &-sticker {
+    background-color: var(--white-dark);
+  }
+  &-gif {
+    @include skeleton();
+  }
 }

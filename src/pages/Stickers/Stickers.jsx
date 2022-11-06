@@ -18,7 +18,7 @@ const MotionTrending = motion(Trending);
 
 const Stickers = () => {
 	const [search, setSearch] = useState([]);
-	const [gif] = useRandom('stickers', 'teclear');
+	const [gif] = useRandom('gifs', 'teclear');
 	const trends = useTrends();
 	const location = useLocation();
 	const [page, setPage] = useState(initialPage);
@@ -96,7 +96,13 @@ const Stickers = () => {
 					) : (
 						<div className='container-result'>
 							{search.map(el => (
-								<Card key={el.id} id={el.id} title={el.title} img={el.image} />
+								<Card
+									key={el.id}
+									id={el.id}
+									title={el.title}
+									img={el.image}
+									format='sticker'
+								/>
 							))}
 							<button onClick={handleNextPage} className='btn-nextPage'>
 								Cargar más
