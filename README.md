@@ -1,6 +1,6 @@
 # GIFPls
 
-![GitHub Status](https://img.shields.io/badge/Status-En%20desarrollo-brightgreen)
+![GitHub Status](https://img.shields.io/badge/Status-Concluido-blueviolet)
 
 Explora y descubre divertidos Gif y Stickers animados mediante este sitio web donde podrás conocer las tendencias diarias, realizar búsquedas con sugerencias, agregar a favoritos y más.
 
