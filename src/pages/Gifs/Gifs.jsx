@@ -12,6 +12,7 @@ import { useLocation } from 'react-router-dom';
 import Trending from '@/components/Trending/Trending';
 import { motion, useInView } from 'framer-motion';
 import { useTrends } from '@/hooks/useTrends';
+import { Helmet } from 'react-helmet';
 
 const initialPage = 0;
 const MotionTrending = motion(Trending);
@@ -57,6 +58,18 @@ const Gifs = () => {
 	}, [searcher, page]);
 	return (
 		<>
+			<Helmet>
+				<title>GIFPls - Descubre divertidos Gifs</title>
+				<meta
+					name='description'
+					content='Encuentra los mejores gif y stickers animados para darle diversión y
+					transmitir visualmente tus mensajes.'
+				/>
+				<meta
+					name='keywords'
+					content='gifpls, gif, stickers, trending gif, giphy'
+				/>
+			</Helmet>
 			<section className='section-intro'>
 				<motion.h1
 					initial={{ opacity: 0, translateY: -10 }}

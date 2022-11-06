@@ -9,6 +9,7 @@ import { motion } from 'framer-motion';
 import './detail.scss';
 import { saveAs } from 'file-saver';
 import { useSearchById } from '@/hooks/useSearchById';
+import { Helmet } from 'react-helmet';
 
 const Detail = () => {
 	const { id } = useParams();
@@ -38,42 +39,50 @@ const Detail = () => {
 	};
 
 	return (
-		<div className='detail'>
-			<h1 className='detail__h1'>{titulo}</h1>
-			<div className='img__container'>
-				<motion.img src={image} alt={titulo} className='img' layoutId={id} />
+		<>
+			<Helmet>
+				<title>{titulo}</title>
+				<meta name='description' content={`${titulo} by ${autor}`} />
+				<meta name='keywords' content={`gifpls, gif, sticker, ${titulo}`} />
+			</Helmet>
+
+			<div className='detail'>
+				<h1 className='detail__h1'>{titulo}</h1>
+				<div className='img__container'>
+					<motion.img src={image} alt={titulo} className='img' layoutId={id} />
+				</div>
+				<div className='detail__autor'>
+					<p>Autor: </p>
+					<h2 className='detail__h2'>{autor}</h2>
+				</div>
+				<div className='detail__autor'>
+					<p className='detail__p'>Tipo: </p>
+					<p className='detail__h2'>{filtro.substring(0, filtro.length - 4)}</p>
+				</div>
+				<div>
+					{favoritos.includes(id) ? (
+						<Button
+							name='QUITAR DE FAVORITOS'
+							func={handleStorage}
+							icon={<AiOutlineHeart className='icon__btn' />}
+							color='red'
+						/>
+					) : (
+						<Button
+							name='AGREGAR A FAVORITOS'
+							func={handleStorage}
+							icon={<AiFillHeart className='icon__btn' />}
+							color='red'
+						/>
+					)}
+				</div>
+				<Button
+					name='DESCARGAR'
+					func={download}
+					icon={<FiDownload className='icon__btn' />}
+				/>
 			</div>
-			<div className='detail__autor'>
-				<p>Autor: </p>
-				<h2 className='detail__h2'>{autor}</h2>
-			</div>
-			<div className='detail__autor'>
-				<p className='detail__p'>Tipo: </p>
-				<p className='detail__h2'>{filtro.substring(0, filtro.length - 4)}</p>
-			</div>
-			<div>
-				{favoritos.includes(id) ? (
-					<Button
-						name='QUITAR DE FAVORITOS'
-						func={handleStorage}
-						icon={<AiOutlineHeart className='icon__btn' />}
-						color='red'
-					/>
-				) : (
-					<Button
-						name='AGREGAR A FAVORITOS'
-						func={handleStorage}
-						icon={<AiFillHeart className='icon__btn' />}
-						color='red'
-					/>
-				)}
-			</div>
-			<Button
-				name='DESCARGAR'
-				func={download}
-				icon={<FiDownload className='icon__btn' />}
-			/>
-		</div>
+		</>
 	);
 };
 
