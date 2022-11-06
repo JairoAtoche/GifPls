@@ -65,7 +65,7 @@ Estas son las tecnologías, API, bundler y biblioteca que he utilizado para desa
 ### 📐 Diseño del prototipo <a name="diseño-del-prototipo"></a>
 
 - <a href="https://www.figma.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="Figma" width="25" height="25" /> FIGMA </a> - para desarrollar el diagrama de flujo y el prototipo del sitio web. <br>
-  [Abrir en Figma]()
+  [Abrir en Figma](https://www.figma.com/file/4Svelf43PGKQzx5u2T7CvA/Untitled)
 
 ### ⚙️ Entorno de configuración <a name="entorno-de-configuración"></a>
 
