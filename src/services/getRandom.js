@@ -14,7 +14,7 @@ export const getRandom = async (format, query = '') => {
 		const itemInfo = {
 			id: data.id,
 			title: data.title,
-			image: data.images.downsized_large.url,
+			image: data.images.fixed_height.url,
 		};
 		return itemInfo;
 	} catch (err) {

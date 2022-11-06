@@ -12,7 +12,7 @@ export const getSearchById = async id => {
 		const { data } = await response.json();
 		const itemInfo = {
 			title: data.title,
-			image: data.images.downsized_large.url,
+			image: data.images.fixed_height.url,
 		};
 		return itemInfo;
 	} catch (err) {

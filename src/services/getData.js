@@ -26,7 +26,7 @@ export const getData = async ({
 		const dataInfo = {
 			id: data.id,
 			title: data.title,
-			image: data.images.downsized_large.url,
+			image: data.images.fixed_height.url,
 		};
 		return dataInfo;
 	}

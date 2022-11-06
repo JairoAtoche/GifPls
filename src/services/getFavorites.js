@@ -15,7 +15,7 @@ export const getFavorites = async ids => {
 			const itemInfo = {
 				id: data.id,
 				title: data.title,
-				image: data.images.downsized_large.url,
+				image: data.images.fixed_height.url,
 			};
 			return itemInfo;
 		});
