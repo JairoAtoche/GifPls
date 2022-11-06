@@ -132,7 +132,9 @@ Stack de tecnologías base para construir el sitio web.
 
 ### 📚 Biblioteca <a name="biblioteca"></a>
 
-- <a href="https://react-icons.github.io/react-icons/" target="_blank" rel="noreferrer"> <img src="https://camo.githubusercontent.com/48d099290b4cb2d7937bcd96e8497cf1845b54a810a6432c70cf944b60b40c77/68747470733a2f2f7261776769742e636f6d2f676f72616e67616a69632f72656163742d69636f6e732f6d61737465722f72656163742d69636f6e732e737667" alt="React Icons" width="25" height="25"/> React Icons </a> - para agregar iconos en el proyecto.
+- <a href="https://www.npmjs.com/package/react-helmet" target="_blank" rel="noreferrer"> <img src="https://miro.medium.com/max/600/0*LPvu8HCNQfYNPK7I" alt="React Helmet" width="25" height="25"/> React Helmet </a> - para agregar SEO.
+
+- <a href="https://react-icons.github.io/react-icons/" target="_blank" rel="noreferrer"> <img src="https://camo.githubusercontent.com/48d099290b4cb2d7937bcd96e8497cf1845b54a810a6432c70cf944b60b40c77/68747470733a2f2f7261776769742e636f6d2f676f72616e67616a69632f72656163742d69636f6e732f6d61737465722f72656163742d69636f6e732e737667" alt="React Icons" width="25" height="25"/> React Icons </a> - para agregar iconos.
 
 - <a href="https://www.framer.com/motion/" target="_blank" rel="noreferrer"> <img src="https://user-images.githubusercontent.com/44626985/197283954-87da4751-ab77-42b6-a70d-e9e08ab541b6.png" alt="Framer Motion" width="25" height="25"/> Framer Motion </a> - para crear animaciones.
 
